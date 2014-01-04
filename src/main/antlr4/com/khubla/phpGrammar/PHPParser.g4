@@ -30,7 +30,7 @@ html
 //
 //
 phpBlock 
-    : prolog statement* epilog
+    : prolog statement* epilog?
     ;
 
 prolog

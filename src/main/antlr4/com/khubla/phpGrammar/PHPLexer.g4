@@ -12,7 +12,7 @@ lexer grammar PHPLexer;
 //
 
 PHPStart
-    : ('<?' | '<?php' | '<?PHP') -> pushMode(PHP)
+    : ('<?' | '<?php' | '<?PHP') -> pushMode(PHPMode)
     ;
 
 PHPO
@@ -20,19 +20,30 @@ PHPO
     ;
 
 Html
-    : ~ ['<']+;
+    : ~ ['<']+
+    ;
 
-HtmlWS : [ \r\n]+ -> skip;
+HtmlWS : [ \r\n]+ -> skip
+    ;
+
+
 //
 //
 // PHP 
 //
 //
-mode PHP;
+mode PHPMode;
 
 PHPEnd
     : '?>' -> popMode
     ;
+
+//MultilineCommentStart
+//    : '/*' -> pushMode(MultilineCommentMode)
+//    ;
+
+MultiLineComment
+     : '/*' .*? '*/' -> channel(HIDDEN) ;
 
 RealE
     : 'e' | 'E';
@@ -155,9 +166,9 @@ Abstract
 Static
     : 'static';
 
-MultilineComment    
-    : '/*' ('*' | ~ '*')* '*/' 
-    ;
+//MultilineComment    
+//    : '/*' ('*' | ~ '*')* '*/' 
+//    ;
 
 SinglelineComment
     : '//' ~[\r\n]*
@@ -248,5 +259,16 @@ IncrementOperator
     ;
     
 WS : [ \t\r\n]+ -> skip;
+
+//mode MultilineCommentMode;
+
+//MultiLineComment
+//     : '/*' .*? '*/' 
+//     ;
+
+//MultilineCommentEnd
+//    : '*/'  -> popMode
+//    ;
+
 
 
