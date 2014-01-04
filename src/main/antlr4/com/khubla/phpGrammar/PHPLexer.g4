@@ -12,7 +12,7 @@ lexer grammar PHPLexer;
 //
 
 PHPStart
-    : ('<?' | '<?php') -> pushMode(PHP)
+    : ('<?' | '<?php' | '<?PHP') -> pushMode(PHP)
     ;
 
 PHPO
@@ -20,7 +20,7 @@ PHPO
     ;
 
 Html
-    : ~ ['<'];
+    : ~ ['<']+;
 
 HtmlWS : [ \r\n]+ -> skip;
 //
