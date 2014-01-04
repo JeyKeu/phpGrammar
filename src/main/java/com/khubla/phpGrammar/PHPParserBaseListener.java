@@ -706,19 +706,6 @@ public class PHPParserBaseListener implements PHPParserListener {
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterSinglelinecomment(@NotNull PHPParser.SinglelinecommentContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void exitSinglelinecomment(@NotNull PHPParser.SinglelinecommentContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
 	@Override public void enterMultiplication(@NotNull PHPParser.MultiplicationContext ctx) { }
 	/**
 	 * {@inheritDoc}

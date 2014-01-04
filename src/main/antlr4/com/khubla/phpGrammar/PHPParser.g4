@@ -54,7 +54,6 @@ statement
     | interfaceDefinition
     | complexStatement
     | simpleStatement ';'
-    | singlelinecomment
     ;
 
 complexStatement
@@ -136,16 +135,6 @@ casestatement
 
 defaultcase 
     : (Default Colon statement*)
-    ;
-
-//
-//
-// comment
-//
-//
-
-singlelinecomment
-    : SinglelineComment
     ;
 
 //

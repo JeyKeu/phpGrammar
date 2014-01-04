@@ -592,17 +592,6 @@ public interface PHPParserListener extends ParseTreeListener {
 	void exitInterfaceName(@NotNull PHPParser.InterfaceNameContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link PHPParser#singlelinecomment}.
-	 * @param ctx the parse tree
-	 */
-	void enterSinglelinecomment(@NotNull PHPParser.SinglelinecommentContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PHPParser#singlelinecomment}.
-	 * @param ctx the parse tree
-	 */
-	void exitSinglelinecomment(@NotNull PHPParser.SinglelinecommentContext ctx);
-
-	/**
 	 * Enter a parse tree produced by {@link PHPParser#multiplication}.
 	 * @param ctx the parse tree
 	 */

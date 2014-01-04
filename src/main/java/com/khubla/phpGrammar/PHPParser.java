@@ -15,33 +15,33 @@ public class PHPParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		SingleQuotedString=79, HexNumber=74, Switch=24, Html=3, Pipe=39, Array=69, 
-		Static=66, OpenSquareBracket=58, Forwardslash=45, OpenRoundBracket=56, 
-		OctalNumber=75, SinglelineComment=67, Extends=22, While=34, HtmlWS=4, 
-		Case=25, Percent=44, ComparisionOperator=85, ClassMember=54, CloseSquareBracket=59, 
-		Identifier=82, Xor=15, Global=16, Default=26, CloseRoundBracket=57, AssignmentOperator=83, 
-		DoubleQuotedString=81, IncrementOperator=87, PHPStart=1, Digits=77, Implements=19, 
-		Interface=62, Do=23, EscapeCharacter=80, UnixComment=68, Class=21, Or=14, 
-		PHPO=2, Return=18, Clone=37, Dollar=49, MultiLineComment=6, If=29, And=11, 
-		Tilde=46, SemiColon=9, Asterisk=43, InstanceMember=47, Continue=17, As=8, 
-		ShiftOperator=86, LogicalOr=52, AccessModifier=72, LogicalAnd=53, PrimitiveType=71, 
-		ElseIf=31, Colon=64, DecimalNumber=73, Const=13, For=32, Foreach=33, List=12, 
-		RequireOperator=70, CloseCurlyBracket=61, Ampersand=38, Float=76, Plus=41, 
-		Bang=40, Minus=42, WS=88, SuppressWarnings=48, Break=28, Function=27, 
-		New=36, Boolean=78, OpenCurlyBracket=60, Instanceof=10, Dot=50, RealE=7, 
-		QuestionMark=55, ArrayAssign=51, EqualityOperator=84, Else=30, Comma=63, 
-		Equals=35, Var=20, PHPEnd=5, Abstract=65;
+		SingleQuotedString=79, HexNumber=74, Switch=26, Html=3, Pipe=41, Array=69, 
+		Static=68, OpenSquareBracket=60, Forwardslash=47, OpenRoundBracket=58, 
+		OctalNumber=75, Extends=24, SinglelineComment=7, While=36, HtmlWS=4, Case=27, 
+		Percent=46, ComparisionOperator=85, ClassMember=56, CloseSquareBracket=61, 
+		Identifier=82, Xor=17, Global=18, Default=28, CloseRoundBracket=59, AssignmentOperator=83, 
+		DoubleQuotedString=81, IncrementOperator=87, PHPStart=1, Digits=77, Implements=21, 
+		Interface=64, Do=25, EscapeCharacter=80, UnixComment=8, Class=23, Or=16, 
+		PHPO=2, Return=20, Clone=39, Dollar=51, MultiLineComment=6, If=31, And=13, 
+		Tilde=48, SemiColon=11, Asterisk=45, InstanceMember=49, Continue=19, As=10, 
+		ShiftOperator=86, LogicalOr=54, AccessModifier=72, LogicalAnd=55, PrimitiveType=71, 
+		ElseIf=33, Colon=66, DecimalNumber=73, Const=15, For=34, Foreach=35, List=14, 
+		RequireOperator=70, CloseCurlyBracket=63, Ampersand=40, Float=76, Plus=43, 
+		Bang=42, Minus=44, WS=88, SuppressWarnings=50, Break=30, Function=29, 
+		New=38, Boolean=78, OpenCurlyBracket=62, Instanceof=12, Dot=52, RealE=9, 
+		QuestionMark=57, ArrayAssign=53, EqualityOperator=84, Else=32, Comma=65, 
+		Equals=37, Var=22, PHPEnd=5, Abstract=67;
 	public static final String[] tokenNames = {
 		"<INVALID>", "PHPStart", "'<'", "Html", "HtmlWS", "'?>'", "MultiLineComment", 
-		"RealE", "'as'", "';'", "'instanceof'", "'and'", "'list'", "'const'", 
-		"'or'", "'xor'", "'global'", "'continue'", "'return'", "'implements'", 
-		"'var'", "'class'", "'extends'", "'do'", "'switch'", "'case'", "'default'", 
-		"'function'", "'break'", "'if'", "'else'", "'elseif'", "'for'", "'foreach'", 
-		"'while'", "'='", "'new'", "'clone'", "'&'", "'|'", "'!'", "'+'", "'-'", 
-		"'*'", "'%'", "'/'", "'~'", "'->'", "'@'", "'$'", "'.'", "'=>'", "'||'", 
-		"'&&'", "'::'", "'?'", "'('", "')'", "'['", "']'", "'{'", "'}'", "'Interface'", 
-		"','", "':'", "'abstract'", "'static'", "SinglelineComment", "UnixComment", 
-		"Array", "RequireOperator", "PrimitiveType", "AccessModifier", "DecimalNumber", 
+		"SinglelineComment", "UnixComment", "RealE", "'as'", "';'", "'instanceof'", 
+		"'and'", "'list'", "'const'", "'or'", "'xor'", "'global'", "'continue'", 
+		"'return'", "'implements'", "'var'", "'class'", "'extends'", "'do'", "'switch'", 
+		"'case'", "'default'", "'function'", "'break'", "'if'", "'else'", "'elseif'", 
+		"'for'", "'foreach'", "'while'", "'='", "'new'", "'clone'", "'&'", "'|'", 
+		"'!'", "'+'", "'-'", "'*'", "'%'", "'/'", "'~'", "'->'", "'@'", "'$'", 
+		"'.'", "'=>'", "'||'", "'&&'", "'::'", "'?'", "'('", "')'", "'['", "']'", 
+		"'{'", "'}'", "'Interface'", "','", "':'", "'abstract'", "'static'", "Array", 
+		"RequireOperator", "PrimitiveType", "AccessModifier", "DecimalNumber", 
 		"HexNumber", "OctalNumber", "Float", "Digits", "Boolean", "SingleQuotedString", 
 		"EscapeCharacter", "DoubleQuotedString", "Identifier", "AssignmentOperator", 
 		"EqualityOperator", "ComparisionOperator", "ShiftOperator", "IncrementOperator", 
@@ -55,33 +55,33 @@ public class PHPParser extends Parser {
 		RULE_globalStatement = 15, RULE_staticVariableAssignmentStatement = 16, 
 		RULE_breakStatement = 17, RULE_continueStatement = 18, RULE_returnStatement = 19, 
 		RULE_requireStatement = 20, RULE_cases = 21, RULE_casestatement = 22, 
-		RULE_defaultcase = 23, RULE_singlelinecomment = 24, RULE_variable = 25, 
-		RULE_variablename = 26, RULE_name = 27, RULE_staticMemberAccess = 28, 
-		RULE_memberAccess = 29, RULE_bracketedBlock = 30, RULE_interfaceDefinition = 31, 
-		RULE_interfaceName = 32, RULE_interfaceExtends = 33, RULE_interfaceMember = 34, 
-		RULE_className = 35, RULE_classDefinition = 36, RULE_classImplements = 37, 
-		RULE_classMember = 38, RULE_classModifier = 39, RULE_constDefinition = 40, 
-		RULE_fieldDefinition = 41, RULE_fieldModifier = 42, RULE_fieldName = 43, 
-		RULE_functionDefinition = 44, RULE_parametersDefinition = 45, RULE_functionInvocation = 46, 
-		RULE_functionName = 47, RULE_functionInvocationParameters = 48, RULE_paramDef = 49, 
-		RULE_paramName = 50, RULE_commaList = 51, RULE_expression = 52, RULE_weakLogicalOr = 53, 
-		RULE_weakLogicalXor = 54, RULE_weakLogicalAnd = 55, RULE_assignment = 56, 
-		RULE_listVariables = 57, RULE_ternary = 58, RULE_logicalOr = 59, RULE_logicalAnd = 60, 
-		RULE_bitwiseOr = 61, RULE_bitWiseAnd = 62, RULE_equalityCheck = 63, RULE_comparisionCheck = 64, 
-		RULE_bitWiseShift = 65, RULE_addition = 66, RULE_multiplication = 67, 
-		RULE_logicalNot = 68, RULE_instanceOf = 69, RULE_negateOrCast = 70, RULE_increment = 71, 
-		RULE_newOrClone = 72, RULE_atomOrReference = 73, RULE_arrayDeclaration = 74, 
-		RULE_arrayEntry = 75, RULE_keyValuePair = 76, RULE_atom = 77, RULE_reference = 78, 
-		RULE_bool = 79, RULE_number = 80, RULE_integer = 81, RULE_real = 82, RULE_string = 83;
+		RULE_defaultcase = 23, RULE_variable = 24, RULE_variablename = 25, RULE_name = 26, 
+		RULE_staticMemberAccess = 27, RULE_memberAccess = 28, RULE_bracketedBlock = 29, 
+		RULE_interfaceDefinition = 30, RULE_interfaceName = 31, RULE_interfaceExtends = 32, 
+		RULE_interfaceMember = 33, RULE_className = 34, RULE_classDefinition = 35, 
+		RULE_classImplements = 36, RULE_classMember = 37, RULE_classModifier = 38, 
+		RULE_constDefinition = 39, RULE_fieldDefinition = 40, RULE_fieldModifier = 41, 
+		RULE_fieldName = 42, RULE_functionDefinition = 43, RULE_parametersDefinition = 44, 
+		RULE_functionInvocation = 45, RULE_functionName = 46, RULE_functionInvocationParameters = 47, 
+		RULE_paramDef = 48, RULE_paramName = 49, RULE_commaList = 50, RULE_expression = 51, 
+		RULE_weakLogicalOr = 52, RULE_weakLogicalXor = 53, RULE_weakLogicalAnd = 54, 
+		RULE_assignment = 55, RULE_listVariables = 56, RULE_ternary = 57, RULE_logicalOr = 58, 
+		RULE_logicalAnd = 59, RULE_bitwiseOr = 60, RULE_bitWiseAnd = 61, RULE_equalityCheck = 62, 
+		RULE_comparisionCheck = 63, RULE_bitWiseShift = 64, RULE_addition = 65, 
+		RULE_multiplication = 66, RULE_logicalNot = 67, RULE_instanceOf = 68, 
+		RULE_negateOrCast = 69, RULE_increment = 70, RULE_newOrClone = 71, RULE_atomOrReference = 72, 
+		RULE_arrayDeclaration = 73, RULE_arrayEntry = 74, RULE_keyValuePair = 75, 
+		RULE_atom = 76, RULE_reference = 77, RULE_bool = 78, RULE_number = 79, 
+		RULE_integer = 80, RULE_real = 81, RULE_string = 82;
 	public static final String[] ruleNames = {
 		"prog", "htmlblock", "html", "phpBlock", "prolog", "epilog", "statement", 
 		"complexStatement", "forstatement", "ifstatement", "foreachstatement", 
 		"whilestatement", "dostatement", "switchstatement", "simpleStatement", 
 		"globalStatement", "staticVariableAssignmentStatement", "breakStatement", 
 		"continueStatement", "returnStatement", "requireStatement", "cases", "casestatement", 
-		"defaultcase", "singlelinecomment", "variable", "variablename", "name", 
-		"staticMemberAccess", "memberAccess", "bracketedBlock", "interfaceDefinition", 
-		"interfaceName", "interfaceExtends", "interfaceMember", "className", "classDefinition", 
+		"defaultcase", "variable", "variablename", "name", "staticMemberAccess", 
+		"memberAccess", "bracketedBlock", "interfaceDefinition", "interfaceName", 
+		"interfaceExtends", "interfaceMember", "className", "classDefinition", 
 		"classImplements", "classMember", "classModifier", "constDefinition", 
 		"fieldDefinition", "fieldModifier", "fieldName", "functionDefinition", 
 		"parametersDefinition", "functionInvocation", "functionName", "functionInvocationParameters", 
@@ -144,29 +144,29 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(172);
+			setState(170);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << PHPStart) | (1L << PHPO) | (1L << Html))) != 0)) {
 				{
-				setState(170);
+				setState(168);
 				switch (_input.LA(1)) {
 				case PHPStart:
 					{
-					setState(168); phpBlock();
+					setState(166); phpBlock();
 					}
 					break;
 				case PHPO:
 				case Html:
 					{
-					setState(169); htmlblock();
+					setState(167); htmlblock();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
 				}
-				setState(174);
+				setState(172);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -213,15 +213,15 @@ public class PHPParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(176);
+			setState(174);
 			_la = _input.LA(1);
 			if (_la==PHPO) {
 				{
-				setState(175); match(PHPO);
+				setState(173); match(PHPO);
 				}
 			}
 
-			setState(179); 
+			setState(177); 
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
 			do {
@@ -229,14 +229,14 @@ public class PHPParser extends Parser {
 				case 1:
 					{
 					{
-					setState(178); html();
+					setState(176); html();
 					}
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(181); 
+				setState(179); 
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
 			} while ( _alt!=2 && _alt!=-1 );
@@ -275,7 +275,7 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(183); match(Html);
+			setState(181); match(Html);
 			}
 		}
 		catch (RecognitionException re) {
@@ -323,25 +323,25 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(185); prolog();
-			setState(189);
+			setState(183); prolog();
+			setState(187);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << Global) | (1L << Continue) | (1L << Return) | (1L << Class) | (1L << Do) | (1L << Switch) | (1L << Function) | (1L << Break) | (1L << If) | (1L << For) | (1L << Foreach) | (1L << While) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket) | (1L << OpenCurlyBracket) | (1L << Interface))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (Abstract - 65)) | (1L << (Static - 65)) | (1L << (SinglelineComment - 65)) | (1L << (Array - 65)) | (1L << (RequireOperator - 65)) | (1L << (DecimalNumber - 65)) | (1L << (HexNumber - 65)) | (1L << (OctalNumber - 65)) | (1L << (Float - 65)) | (1L << (Boolean - 65)) | (1L << (SingleQuotedString - 65)) | (1L << (DoubleQuotedString - 65)) | (1L << (Identifier - 65)) | (1L << (IncrementOperator - 65)))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << Global) | (1L << Continue) | (1L << Return) | (1L << Class) | (1L << Do) | (1L << Switch) | (1L << Function) | (1L << Break) | (1L << If) | (1L << For) | (1L << Foreach) | (1L << While) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket) | (1L << OpenCurlyBracket))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (Interface - 64)) | (1L << (Abstract - 64)) | (1L << (Static - 64)) | (1L << (Array - 64)) | (1L << (RequireOperator - 64)) | (1L << (DecimalNumber - 64)) | (1L << (HexNumber - 64)) | (1L << (OctalNumber - 64)) | (1L << (Float - 64)) | (1L << (Boolean - 64)) | (1L << (SingleQuotedString - 64)) | (1L << (DoubleQuotedString - 64)) | (1L << (Identifier - 64)) | (1L << (IncrementOperator - 64)))) != 0)) {
 				{
 				{
-				setState(186); statement();
+				setState(184); statement();
 				}
 				}
-				setState(191);
+				setState(189);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(193);
+			setState(191);
 			_la = _input.LA(1);
 			if (_la==PHPEnd) {
 				{
-				setState(192); epilog();
+				setState(190); epilog();
 				}
 			}
 
@@ -380,7 +380,7 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(195); match(PHPStart);
+			setState(193); match(PHPStart);
 			}
 		}
 		catch (RecognitionException re) {
@@ -416,7 +416,7 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(197); match(PHPEnd);
+			setState(195); match(PHPEnd);
 			}
 		}
 		catch (RecognitionException re) {
@@ -443,9 +443,6 @@ public class PHPParser extends Parser {
 		public BracketedBlockContext bracketedBlock() {
 			return getRuleContext(BracketedBlockContext.class,0);
 		}
-		public SinglelinecommentContext singlelinecomment() {
-			return getRuleContext(SinglelinecommentContext.class,0);
-		}
 		public ClassDefinitionContext classDefinition() {
 			return getRuleContext(ClassDefinitionContext.class,0);
 		}
@@ -470,57 +467,50 @@ public class PHPParser extends Parser {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_statement);
 		try {
-			setState(211);
+			setState(208);
 			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(199); match(OpenCurlyBracket);
-				setState(200); statement();
-				setState(201); match(CloseCurlyBracket);
+				setState(197); match(OpenCurlyBracket);
+				setState(198); statement();
+				setState(199); match(CloseCurlyBracket);
 				}
 				break;
 
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(203); bracketedBlock();
+				setState(201); bracketedBlock();
 				}
 				break;
 
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(204); classDefinition();
+				setState(202); classDefinition();
 				}
 				break;
 
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(205); interfaceDefinition();
+				setState(203); interfaceDefinition();
 				}
 				break;
 
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(206); complexStatement();
+				setState(204); complexStatement();
 				}
 				break;
 
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(207); simpleStatement();
-				setState(208); match(SemiColon);
-				}
-				break;
-
-			case 7:
-				enterOuterAlt(_localctx, 7);
-				{
-				setState(210); singlelinecomment();
+				setState(205); simpleStatement();
+				setState(206); match(SemiColon);
 				}
 				break;
 			}
@@ -576,48 +566,48 @@ public class PHPParser extends Parser {
 		ComplexStatementContext _localctx = new ComplexStatementContext(_ctx, getState());
 		enterRule(_localctx, 14, RULE_complexStatement);
 		try {
-			setState(220);
+			setState(217);
 			switch (_input.LA(1)) {
 			case If:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(213); ifstatement();
+				setState(210); ifstatement();
 				}
 				break;
 			case For:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(214); forstatement();
+				setState(211); forstatement();
 				}
 				break;
 			case Foreach:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(215); foreachstatement();
+				setState(212); foreachstatement();
 				}
 				break;
 			case While:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(216); whilestatement();
+				setState(213); whilestatement();
 				}
 				break;
 			case Do:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(217); dostatement();
+				setState(214); dostatement();
 				}
 				break;
 			case Switch:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(218); switchstatement();
+				setState(215); switchstatement();
 				}
 				break;
 			case Function:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(219); functionDefinition();
+				setState(216); functionDefinition();
 				}
 				break;
 			default:
@@ -666,15 +656,15 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(222); match(For);
-			setState(223); match(OpenRoundBracket);
-			setState(224); expression();
-			setState(225); match(SemiColon);
-			setState(226); expression();
-			setState(227); match(SemiColon);
-			setState(228); expression();
-			setState(229); match(CloseRoundBracket);
-			setState(230); statement();
+			setState(219); match(For);
+			setState(220); match(OpenRoundBracket);
+			setState(221); expression();
+			setState(222); match(SemiColon);
+			setState(223); expression();
+			setState(224); match(SemiColon);
+			setState(225); expression();
+			setState(226); match(CloseRoundBracket);
+			setState(227); statement();
 			}
 		}
 		catch (RecognitionException re) {
@@ -728,35 +718,35 @@ public class PHPParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(232); match(If);
-			setState(233); match(OpenRoundBracket);
-			setState(234); expression();
-			setState(235); match(CloseRoundBracket);
-			setState(236); statement();
-			setState(244);
+			setState(229); match(If);
+			setState(230); match(OpenRoundBracket);
+			setState(231); expression();
+			setState(232); match(CloseRoundBracket);
+			setState(233); statement();
+			setState(241);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(237); match(ElseIf);
-					setState(238); match(OpenRoundBracket);
-					setState(239); expression();
-					setState(240); match(CloseRoundBracket);
+					setState(234); match(ElseIf);
+					setState(235); match(OpenRoundBracket);
+					setState(236); expression();
+					setState(237); match(CloseRoundBracket);
 					}
 					} 
 				}
-				setState(246);
+				setState(243);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
 			}
-			setState(249);
+			setState(246);
 			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
 			case 1:
 				{
-				setState(247); match(Else);
-				setState(248); statement();
+				setState(244); match(Else);
+				setState(245); statement();
 				}
 				break;
 			}
@@ -804,13 +794,13 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(251); match(Foreach);
-			setState(252); match(OpenRoundBracket);
-			setState(253); variable();
-			setState(254); match(As);
-			setState(255); arrayEntry();
-			setState(256); match(CloseRoundBracket);
-			setState(257); statement();
+			setState(248); match(Foreach);
+			setState(249); match(OpenRoundBracket);
+			setState(250); variable();
+			setState(251); match(As);
+			setState(252); arrayEntry();
+			setState(253); match(CloseRoundBracket);
+			setState(254); statement();
 			}
 		}
 		catch (RecognitionException re) {
@@ -853,18 +843,18 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(259); match(While);
-			setState(260); match(OpenRoundBracket);
-			setState(262);
+			setState(256); match(While);
+			setState(257); match(OpenRoundBracket);
+			setState(259);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket))) != 0) || ((((_la - 69)) & ~0x3f) == 0 && ((1L << (_la - 69)) & ((1L << (Array - 69)) | (1L << (DecimalNumber - 69)) | (1L << (HexNumber - 69)) | (1L << (OctalNumber - 69)) | (1L << (Float - 69)) | (1L << (Boolean - 69)) | (1L << (SingleQuotedString - 69)) | (1L << (DoubleQuotedString - 69)) | (1L << (Identifier - 69)) | (1L << (IncrementOperator - 69)))) != 0)) {
 				{
-				setState(261); expression();
+				setState(258); expression();
 				}
 			}
 
-			setState(264); match(CloseRoundBracket);
-			setState(265); statement();
+			setState(261); match(CloseRoundBracket);
+			setState(262); statement();
 			}
 		}
 		catch (RecognitionException re) {
@@ -907,13 +897,13 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(267); match(Do);
-			setState(268); statement();
-			setState(269); match(While);
-			setState(270); match(OpenRoundBracket);
-			setState(271); expression();
-			setState(272); match(CloseRoundBracket);
-			setState(273); match(SemiColon);
+			setState(264); match(Do);
+			setState(265); statement();
+			setState(266); match(While);
+			setState(267); match(OpenRoundBracket);
+			setState(268); expression();
+			setState(269); match(CloseRoundBracket);
+			setState(270); match(SemiColon);
 			}
 		}
 		catch (RecognitionException re) {
@@ -955,13 +945,13 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(275); match(Switch);
-			setState(276); match(OpenRoundBracket);
-			setState(277); expression();
-			setState(278); match(CloseRoundBracket);
-			setState(279); match(OpenCurlyBracket);
-			setState(280); cases();
-			setState(281); match(CloseCurlyBracket);
+			setState(272); match(Switch);
+			setState(273); match(OpenRoundBracket);
+			setState(274); expression();
+			setState(275); match(CloseRoundBracket);
+			setState(276); match(OpenCurlyBracket);
+			setState(277); cases();
+			setState(278); match(CloseCurlyBracket);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1015,54 +1005,54 @@ public class PHPParser extends Parser {
 		SimpleStatementContext _localctx = new SimpleStatementContext(_ctx, getState());
 		enterRule(_localctx, 28, RULE_simpleStatement);
 		try {
-			setState(290);
+			setState(287);
 			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(283); globalStatement();
+				setState(280); globalStatement();
 				}
 				break;
 
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(284); staticVariableAssignmentStatement();
+				setState(281); staticVariableAssignmentStatement();
 				}
 				break;
 
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(285); breakStatement();
+				setState(282); breakStatement();
 				}
 				break;
 
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(286); continueStatement();
+				setState(283); continueStatement();
 				}
 				break;
 
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(287); returnStatement();
+				setState(284); returnStatement();
 				}
 				break;
 
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(288); requireStatement();
+				setState(285); requireStatement();
 				}
 				break;
 
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(289); expression();
+				setState(286); expression();
 				}
 				break;
 			}
@@ -1111,19 +1101,19 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(292); match(Global);
-			setState(293); name();
-			setState(298);
+			setState(289); match(Global);
+			setState(290); name();
+			setState(295);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Comma) {
 				{
 				{
-				setState(294); match(Comma);
-				setState(295); name();
+				setState(291); match(Comma);
+				setState(292); name();
 				}
 				}
-				setState(300);
+				setState(297);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -1170,17 +1160,17 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(302);
+			setState(299);
 			_la = _input.LA(1);
 			if (_la==Static) {
 				{
-				setState(301); match(Static);
+				setState(298); match(Static);
 				}
 			}
 
-			setState(304); variable();
-			setState(305); match(Equals);
-			setState(306); expression();
+			setState(301); variable();
+			setState(302); match(Equals);
+			setState(303); expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1218,12 +1208,12 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(308); match(Break);
-			setState(310);
+			setState(305); match(Break);
+			setState(307);
 			_la = _input.LA(1);
 			if (_la==DecimalNumber) {
 				{
-				setState(309); match(DecimalNumber);
+				setState(306); match(DecimalNumber);
 				}
 			}
 
@@ -1264,12 +1254,12 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(312); match(Continue);
-			setState(314);
+			setState(309); match(Continue);
+			setState(311);
 			_la = _input.LA(1);
 			if (_la==DecimalNumber) {
 				{
-				setState(313); match(DecimalNumber);
+				setState(310); match(DecimalNumber);
 				}
 			}
 
@@ -1312,12 +1302,12 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(316); match(Return);
-			setState(318);
+			setState(313); match(Return);
+			setState(315);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket))) != 0) || ((((_la - 69)) & ~0x3f) == 0 && ((1L << (_la - 69)) & ((1L << (Array - 69)) | (1L << (DecimalNumber - 69)) | (1L << (HexNumber - 69)) | (1L << (OctalNumber - 69)) | (1L << (Float - 69)) | (1L << (Boolean - 69)) | (1L << (SingleQuotedString - 69)) | (1L << (DoubleQuotedString - 69)) | (1L << (Identifier - 69)) | (1L << (IncrementOperator - 69)))) != 0)) {
 				{
-				setState(317); expression();
+				setState(314); expression();
 				}
 			}
 
@@ -1359,8 +1349,8 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(320); match(RequireOperator);
-			setState(321); expression();
+			setState(317); match(RequireOperator);
+			setState(318); expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1405,20 +1395,20 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(326);
+			setState(323);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Case) {
 				{
 				{
-				setState(323); casestatement();
+				setState(320); casestatement();
 				}
 				}
-				setState(328);
+				setState(325);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(329); defaultcase();
+			setState(326); defaultcase();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1465,19 +1455,19 @@ public class PHPParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(331); match(Case);
-			setState(332); expression();
-			setState(333); match(Colon);
-			setState(337);
+			setState(328); match(Case);
+			setState(329); expression();
+			setState(330); match(Colon);
+			setState(334);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << Global) | (1L << Continue) | (1L << Return) | (1L << Class) | (1L << Do) | (1L << Switch) | (1L << Function) | (1L << Break) | (1L << If) | (1L << For) | (1L << Foreach) | (1L << While) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket) | (1L << OpenCurlyBracket) | (1L << Interface))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (Abstract - 65)) | (1L << (Static - 65)) | (1L << (SinglelineComment - 65)) | (1L << (Array - 65)) | (1L << (RequireOperator - 65)) | (1L << (DecimalNumber - 65)) | (1L << (HexNumber - 65)) | (1L << (OctalNumber - 65)) | (1L << (Float - 65)) | (1L << (Boolean - 65)) | (1L << (SingleQuotedString - 65)) | (1L << (DoubleQuotedString - 65)) | (1L << (Identifier - 65)) | (1L << (IncrementOperator - 65)))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << Global) | (1L << Continue) | (1L << Return) | (1L << Class) | (1L << Do) | (1L << Switch) | (1L << Function) | (1L << Break) | (1L << If) | (1L << For) | (1L << Foreach) | (1L << While) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket) | (1L << OpenCurlyBracket))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (Interface - 64)) | (1L << (Abstract - 64)) | (1L << (Static - 64)) | (1L << (Array - 64)) | (1L << (RequireOperator - 64)) | (1L << (DecimalNumber - 64)) | (1L << (HexNumber - 64)) | (1L << (OctalNumber - 64)) | (1L << (Float - 64)) | (1L << (Boolean - 64)) | (1L << (SingleQuotedString - 64)) | (1L << (DoubleQuotedString - 64)) | (1L << (Identifier - 64)) | (1L << (IncrementOperator - 64)))) != 0)) {
 				{
 				{
-				setState(334); statement();
+				setState(331); statement();
 				}
 				}
-				setState(339);
+				setState(336);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -1525,58 +1515,22 @@ public class PHPParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			setState(340); match(Default);
-			setState(341); match(Colon);
-			setState(345);
+			setState(337); match(Default);
+			setState(338); match(Colon);
+			setState(342);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << Global) | (1L << Continue) | (1L << Return) | (1L << Class) | (1L << Do) | (1L << Switch) | (1L << Function) | (1L << Break) | (1L << If) | (1L << For) | (1L << Foreach) | (1L << While) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket) | (1L << OpenCurlyBracket) | (1L << Interface))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (Abstract - 65)) | (1L << (Static - 65)) | (1L << (SinglelineComment - 65)) | (1L << (Array - 65)) | (1L << (RequireOperator - 65)) | (1L << (DecimalNumber - 65)) | (1L << (HexNumber - 65)) | (1L << (OctalNumber - 65)) | (1L << (Float - 65)) | (1L << (Boolean - 65)) | (1L << (SingleQuotedString - 65)) | (1L << (DoubleQuotedString - 65)) | (1L << (Identifier - 65)) | (1L << (IncrementOperator - 65)))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << Global) | (1L << Continue) | (1L << Return) | (1L << Class) | (1L << Do) | (1L << Switch) | (1L << Function) | (1L << Break) | (1L << If) | (1L << For) | (1L << Foreach) | (1L << While) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket) | (1L << OpenCurlyBracket))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (Interface - 64)) | (1L << (Abstract - 64)) | (1L << (Static - 64)) | (1L << (Array - 64)) | (1L << (RequireOperator - 64)) | (1L << (DecimalNumber - 64)) | (1L << (HexNumber - 64)) | (1L << (OctalNumber - 64)) | (1L << (Float - 64)) | (1L << (Boolean - 64)) | (1L << (SingleQuotedString - 64)) | (1L << (DoubleQuotedString - 64)) | (1L << (Identifier - 64)) | (1L << (IncrementOperator - 64)))) != 0)) {
 				{
 				{
-				setState(342); statement();
+				setState(339); statement();
 				}
 				}
-				setState(347);
+				setState(344);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
 			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class SinglelinecommentContext extends ParserRuleContext {
-		public TerminalNode SinglelineComment() { return getToken(PHPParser.SinglelineComment, 0); }
-		public SinglelinecommentContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_singlelinecomment; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof PHPParserListener ) ((PHPParserListener)listener).enterSinglelinecomment(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof PHPParserListener ) ((PHPParserListener)listener).exitSinglelinecomment(this);
-		}
-	}
-
-	public final SinglelinecommentContext singlelinecomment() throws RecognitionException {
-		SinglelinecommentContext _localctx = new SinglelinecommentContext(_ctx, getState());
-		enterRule(_localctx, 48, RULE_singlelinecomment);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(348); match(SinglelineComment);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1615,25 +1569,25 @@ public class PHPParser extends Parser {
 
 	public final VariableContext variable() throws RecognitionException {
 		VariableContext _localctx = new VariableContext(_ctx, getState());
-		enterRule(_localctx, 50, RULE_variable);
+		enterRule(_localctx, 48, RULE_variable);
 		try {
-			setState(357);
+			setState(352);
 			switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(350); match(Dollar);
-				setState(351); variablename();
+				setState(345); match(Dollar);
+				setState(346); variablename();
 				}
 				break;
 
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(352); match(Dollar);
-				setState(353); variablename();
-				setState(354); match(InstanceMember);
-				setState(355); variablename();
+				setState(347); match(Dollar);
+				setState(348); variablename();
+				setState(349); match(InstanceMember);
+				setState(350); variablename();
 				}
 				break;
 			}
@@ -1667,11 +1621,11 @@ public class PHPParser extends Parser {
 
 	public final VariablenameContext variablename() throws RecognitionException {
 		VariablenameContext _localctx = new VariablenameContext(_ctx, getState());
-		enterRule(_localctx, 52, RULE_variablename);
+		enterRule(_localctx, 50, RULE_variablename);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(359); match(Identifier);
+			setState(354); match(Identifier);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1711,28 +1665,28 @@ public class PHPParser extends Parser {
 
 	public final NameContext name() throws RecognitionException {
 		NameContext _localctx = new NameContext(_ctx, getState());
-		enterRule(_localctx, 54, RULE_name);
+		enterRule(_localctx, 52, RULE_name);
 		try {
-			setState(364);
+			setState(359);
 			switch ( getInterpreter().adaptivePredict(_input,21,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(361); staticMemberAccess();
+				setState(356); staticMemberAccess();
 				}
 				break;
 
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(362); memberAccess();
+				setState(357); memberAccess();
 				}
 				break;
 
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(363); variable();
+				setState(358); variable();
 				}
 				break;
 			}
@@ -1770,13 +1724,13 @@ public class PHPParser extends Parser {
 
 	public final StaticMemberAccessContext staticMemberAccess() throws RecognitionException {
 		StaticMemberAccessContext _localctx = new StaticMemberAccessContext(_ctx, getState());
-		enterRule(_localctx, 56, RULE_staticMemberAccess);
+		enterRule(_localctx, 54, RULE_staticMemberAccess);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(366); match(Identifier);
-			setState(367); match(ClassMember);
-			setState(368); variable();
+			setState(361); match(Identifier);
+			setState(362); match(ClassMember);
+			setState(363); variable();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1824,24 +1778,24 @@ public class PHPParser extends Parser {
 
 	public final MemberAccessContext memberAccess() throws RecognitionException {
 		MemberAccessContext _localctx = new MemberAccessContext(_ctx, getState());
-		enterRule(_localctx, 58, RULE_memberAccess);
+		enterRule(_localctx, 56, RULE_memberAccess);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(370); variable();
-			setState(377);
+			setState(365); variable();
+			setState(372);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==OpenSquareBracket) {
 				{
 				{
-				setState(371); match(OpenSquareBracket);
-				setState(372); expression();
-				setState(373); match(CloseSquareBracket);
+				setState(366); match(OpenSquareBracket);
+				setState(367); expression();
+				setState(368); match(CloseSquareBracket);
 				}
 				}
-				setState(379);
+				setState(374);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -1881,26 +1835,26 @@ public class PHPParser extends Parser {
 
 	public final BracketedBlockContext bracketedBlock() throws RecognitionException {
 		BracketedBlockContext _localctx = new BracketedBlockContext(_ctx, getState());
-		enterRule(_localctx, 60, RULE_bracketedBlock);
+		enterRule(_localctx, 58, RULE_bracketedBlock);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(380); match(OpenCurlyBracket);
-			setState(384);
+			setState(375); match(OpenCurlyBracket);
+			setState(379);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << Global) | (1L << Continue) | (1L << Return) | (1L << Class) | (1L << Do) | (1L << Switch) | (1L << Function) | (1L << Break) | (1L << If) | (1L << For) | (1L << Foreach) | (1L << While) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket) | (1L << OpenCurlyBracket) | (1L << Interface))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (Abstract - 65)) | (1L << (Static - 65)) | (1L << (SinglelineComment - 65)) | (1L << (Array - 65)) | (1L << (RequireOperator - 65)) | (1L << (DecimalNumber - 65)) | (1L << (HexNumber - 65)) | (1L << (OctalNumber - 65)) | (1L << (Float - 65)) | (1L << (Boolean - 65)) | (1L << (SingleQuotedString - 65)) | (1L << (DoubleQuotedString - 65)) | (1L << (Identifier - 65)) | (1L << (IncrementOperator - 65)))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << Global) | (1L << Continue) | (1L << Return) | (1L << Class) | (1L << Do) | (1L << Switch) | (1L << Function) | (1L << Break) | (1L << If) | (1L << For) | (1L << Foreach) | (1L << While) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket) | (1L << OpenCurlyBracket))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (Interface - 64)) | (1L << (Abstract - 64)) | (1L << (Static - 64)) | (1L << (Array - 64)) | (1L << (RequireOperator - 64)) | (1L << (DecimalNumber - 64)) | (1L << (HexNumber - 64)) | (1L << (OctalNumber - 64)) | (1L << (Float - 64)) | (1L << (Boolean - 64)) | (1L << (SingleQuotedString - 64)) | (1L << (DoubleQuotedString - 64)) | (1L << (Identifier - 64)) | (1L << (IncrementOperator - 64)))) != 0)) {
 				{
 				{
-				setState(381); statement();
+				setState(376); statement();
 				}
 				}
-				setState(386);
+				setState(381);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(387); match(CloseCurlyBracket);
+			setState(382); match(CloseCurlyBracket);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1946,36 +1900,36 @@ public class PHPParser extends Parser {
 
 	public final InterfaceDefinitionContext interfaceDefinition() throws RecognitionException {
 		InterfaceDefinitionContext _localctx = new InterfaceDefinitionContext(_ctx, getState());
-		enterRule(_localctx, 62, RULE_interfaceDefinition);
+		enterRule(_localctx, 60, RULE_interfaceDefinition);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(389); match(Interface);
-			setState(390); interfaceName();
-			setState(392);
+			setState(384); match(Interface);
+			setState(385); interfaceName();
+			setState(387);
 			_la = _input.LA(1);
 			if (_la==Extends) {
 				{
-				setState(391); interfaceExtends();
+				setState(386); interfaceExtends();
 				}
 			}
 
-			setState(394); match(OpenCurlyBracket);
-			setState(398);
+			setState(389); match(OpenCurlyBracket);
+			setState(393);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 13)) & ~0x3f) == 0 && ((1L << (_la - 13)) & ((1L << (Const - 13)) | (1L << (Function - 13)) | (1L << (Abstract - 13)) | (1L << (Static - 13)) | (1L << (AccessModifier - 13)))) != 0)) {
+			while (((((_la - 15)) & ~0x3f) == 0 && ((1L << (_la - 15)) & ((1L << (Const - 15)) | (1L << (Function - 15)) | (1L << (Abstract - 15)) | (1L << (Static - 15)) | (1L << (AccessModifier - 15)))) != 0)) {
 				{
 				{
-				setState(395); interfaceMember();
+				setState(390); interfaceMember();
 				}
 				}
-				setState(400);
+				setState(395);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(401); match(CloseCurlyBracket);
+			setState(396); match(CloseCurlyBracket);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2007,11 +1961,11 @@ public class PHPParser extends Parser {
 
 	public final InterfaceNameContext interfaceName() throws RecognitionException {
 		InterfaceNameContext _localctx = new InterfaceNameContext(_ctx, getState());
-		enterRule(_localctx, 64, RULE_interfaceName);
+		enterRule(_localctx, 62, RULE_interfaceName);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(403); match(Identifier);
+			setState(398); match(Identifier);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2053,24 +2007,24 @@ public class PHPParser extends Parser {
 
 	public final InterfaceExtendsContext interfaceExtends() throws RecognitionException {
 		InterfaceExtendsContext _localctx = new InterfaceExtendsContext(_ctx, getState());
-		enterRule(_localctx, 66, RULE_interfaceExtends);
+		enterRule(_localctx, 64, RULE_interfaceExtends);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(405); match(Extends);
-			setState(406); interfaceName();
-			setState(411);
+			setState(400); match(Extends);
+			setState(401); interfaceName();
+			setState(406);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Comma) {
 				{
 				{
-				setState(407); match(Comma);
-				setState(408); interfaceName();
+				setState(402); match(Comma);
+				setState(403); interfaceName();
 				}
 				}
-				setState(413);
+				setState(408);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -2123,26 +2077,26 @@ public class PHPParser extends Parser {
 
 	public final InterfaceMemberContext interfaceMember() throws RecognitionException {
 		InterfaceMemberContext _localctx = new InterfaceMemberContext(_ctx, getState());
-		enterRule(_localctx, 68, RULE_interfaceMember);
+		enterRule(_localctx, 66, RULE_interfaceMember);
 		int _la;
 		try {
-			setState(432);
+			setState(427);
 			switch (_input.LA(1)) {
 			case Const:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(414); match(Const);
-				setState(415); match(Identifier);
-				setState(418);
+				setState(409); match(Const);
+				setState(410); match(Identifier);
+				setState(413);
 				_la = _input.LA(1);
 				if (_la==Equals) {
 					{
-					setState(416); match(Equals);
-					setState(417); atom();
+					setState(411); match(Equals);
+					setState(412); atom();
 					}
 				}
 
-				setState(420); match(SemiColon);
+				setState(415); match(SemiColon);
 				}
 				break;
 			case Function:
@@ -2151,23 +2105,23 @@ public class PHPParser extends Parser {
 			case AccessModifier:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(424);
+				setState(419);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				while (((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (Abstract - 65)) | (1L << (Static - 65)) | (1L << (AccessModifier - 65)))) != 0)) {
+				while (((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (Abstract - 67)) | (1L << (Static - 67)) | (1L << (AccessModifier - 67)))) != 0)) {
 					{
 					{
-					setState(421); fieldModifier();
+					setState(416); fieldModifier();
 					}
 					}
-					setState(426);
+					setState(421);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(427); match(Function);
-				setState(428); functionName();
-				setState(429); parametersDefinition();
-				setState(430); match(SemiColon);
+				setState(422); match(Function);
+				setState(423); functionName();
+				setState(424); parametersDefinition();
+				setState(425); match(SemiColon);
 				}
 				break;
 			default:
@@ -2203,11 +2157,11 @@ public class PHPParser extends Parser {
 
 	public final ClassNameContext className() throws RecognitionException {
 		ClassNameContext _localctx = new ClassNameContext(_ctx, getState());
-		enterRule(_localctx, 70, RULE_className);
+		enterRule(_localctx, 68, RULE_className);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(434); match(Identifier);
+			setState(429); match(Identifier);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2260,53 +2214,53 @@ public class PHPParser extends Parser {
 
 	public final ClassDefinitionContext classDefinition() throws RecognitionException {
 		ClassDefinitionContext _localctx = new ClassDefinitionContext(_ctx, getState());
-		enterRule(_localctx, 72, RULE_classDefinition);
+		enterRule(_localctx, 70, RULE_classDefinition);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(437);
+			setState(432);
 			_la = _input.LA(1);
 			if (_la==Abstract) {
 				{
-				setState(436); classModifier();
+				setState(431); classModifier();
 				}
 			}
 
-			setState(439); match(Class);
-			setState(440); className();
-			setState(443);
+			setState(434); match(Class);
+			setState(435); className();
+			setState(438);
 			_la = _input.LA(1);
 			if (_la==Extends) {
 				{
-				setState(441); match(Extends);
-				setState(442); className();
+				setState(436); match(Extends);
+				setState(437); className();
 				}
 			}
 
-			setState(446);
+			setState(441);
 			_la = _input.LA(1);
 			if (_la==Implements) {
 				{
-				setState(445); classImplements();
+				setState(440); classImplements();
 				}
 			}
 
-			setState(448); match(OpenCurlyBracket);
-			setState(452);
+			setState(443); match(OpenCurlyBracket);
+			setState(447);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 13)) & ~0x3f) == 0 && ((1L << (_la - 13)) & ((1L << (Const - 13)) | (1L << (Var - 13)) | (1L << (Function - 13)) | (1L << (Dollar - 13)) | (1L << (Abstract - 13)) | (1L << (Static - 13)) | (1L << (AccessModifier - 13)))) != 0)) {
+			while (((((_la - 15)) & ~0x3f) == 0 && ((1L << (_la - 15)) & ((1L << (Const - 15)) | (1L << (Var - 15)) | (1L << (Function - 15)) | (1L << (Dollar - 15)) | (1L << (Abstract - 15)) | (1L << (Static - 15)) | (1L << (AccessModifier - 15)))) != 0)) {
 				{
 				{
-				setState(449); classMember();
+				setState(444); classMember();
 				}
 				}
-				setState(454);
+				setState(449);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(455); match(CloseCurlyBracket);
+			setState(450); match(CloseCurlyBracket);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2348,25 +2302,25 @@ public class PHPParser extends Parser {
 
 	public final ClassImplementsContext classImplements() throws RecognitionException {
 		ClassImplementsContext _localctx = new ClassImplementsContext(_ctx, getState());
-		enterRule(_localctx, 74, RULE_classImplements);
+		enterRule(_localctx, 72, RULE_classImplements);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(457); match(Implements);
+			setState(452); match(Implements);
 			{
-			setState(458); interfaceName();
-			setState(463);
+			setState(453); interfaceName();
+			setState(458);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Comma) {
 				{
 				{
-				setState(459); match(Comma);
-				setState(460); interfaceName();
+				setState(454); match(Comma);
+				setState(455); interfaceName();
 				}
 				}
-				setState(465);
+				setState(460);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -2424,40 +2378,40 @@ public class PHPParser extends Parser {
 
 	public final ClassMemberContext classMember() throws RecognitionException {
 		ClassMemberContext _localctx = new ClassMemberContext(_ctx, getState());
-		enterRule(_localctx, 76, RULE_classMember);
+		enterRule(_localctx, 74, RULE_classMember);
 		int _la;
 		try {
-			setState(494);
+			setState(489);
 			switch ( getInterpreter().adaptivePredict(_input,39,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(469);
+				setState(464);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				while (((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (Abstract - 65)) | (1L << (Static - 65)) | (1L << (AccessModifier - 65)))) != 0)) {
+				while (((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (Abstract - 67)) | (1L << (Static - 67)) | (1L << (AccessModifier - 67)))) != 0)) {
 					{
 					{
-					setState(466); fieldModifier();
+					setState(461); fieldModifier();
 					}
 					}
-					setState(471);
+					setState(466);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(472); match(Function);
-				setState(473); functionName();
-				setState(474); parametersDefinition();
-				setState(477);
+				setState(467); match(Function);
+				setState(468); functionName();
+				setState(469); parametersDefinition();
+				setState(472);
 				switch (_input.LA(1)) {
 				case OpenCurlyBracket:
 					{
-					setState(475); bracketedBlock();
+					setState(470); bracketedBlock();
 					}
 					break;
 				case SemiColon:
 					{
-					setState(476); match(SemiColon);
+					setState(471); match(SemiColon);
 					}
 					break;
 				default:
@@ -2469,37 +2423,37 @@ public class PHPParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(479); constDefinition();
-				setState(480); match(SemiColon);
+				setState(474); constDefinition();
+				setState(475); match(SemiColon);
 				}
 				break;
 
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(483);
+				setState(478);
 				_la = _input.LA(1);
 				if (_la==Var) {
 					{
-					setState(482); match(Var);
+					setState(477); match(Var);
 					}
 				}
 
-				setState(488);
+				setState(483);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				while (((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (Abstract - 65)) | (1L << (Static - 65)) | (1L << (AccessModifier - 65)))) != 0)) {
+				while (((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (Abstract - 67)) | (1L << (Static - 67)) | (1L << (AccessModifier - 67)))) != 0)) {
 					{
 					{
-					setState(485); fieldModifier();
+					setState(480); fieldModifier();
 					}
 					}
-					setState(490);
+					setState(485);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(491); fieldDefinition();
-				setState(492); match(SemiColon);
+				setState(486); fieldDefinition();
+				setState(487); match(SemiColon);
 				}
 				break;
 			}
@@ -2533,11 +2487,11 @@ public class PHPParser extends Parser {
 
 	public final ClassModifierContext classModifier() throws RecognitionException {
 		ClassModifierContext _localctx = new ClassModifierContext(_ctx, getState());
-		enterRule(_localctx, 78, RULE_classModifier);
+		enterRule(_localctx, 76, RULE_classModifier);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(496); match(Abstract);
+			setState(491); match(Abstract);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2576,14 +2530,14 @@ public class PHPParser extends Parser {
 
 	public final ConstDefinitionContext constDefinition() throws RecognitionException {
 		ConstDefinitionContext _localctx = new ConstDefinitionContext(_ctx, getState());
-		enterRule(_localctx, 80, RULE_constDefinition);
+		enterRule(_localctx, 78, RULE_constDefinition);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(498); match(Const);
-			setState(499); variablename();
-			setState(500); match(Equals);
-			setState(501); atom();
+			setState(493); match(Const);
+			setState(494); variablename();
+			setState(495); match(Equals);
+			setState(496); atom();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2621,18 +2575,18 @@ public class PHPParser extends Parser {
 
 	public final FieldDefinitionContext fieldDefinition() throws RecognitionException {
 		FieldDefinitionContext _localctx = new FieldDefinitionContext(_ctx, getState());
-		enterRule(_localctx, 82, RULE_fieldDefinition);
+		enterRule(_localctx, 80, RULE_fieldDefinition);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(503); fieldName();
-			setState(506);
+			setState(498); fieldName();
+			setState(501);
 			_la = _input.LA(1);
 			if (_la==Equals) {
 				{
-				setState(504); match(Equals);
-				setState(505); atom();
+				setState(499); match(Equals);
+				setState(500); atom();
 				}
 			}
 
@@ -2669,14 +2623,14 @@ public class PHPParser extends Parser {
 
 	public final FieldModifierContext fieldModifier() throws RecognitionException {
 		FieldModifierContext _localctx = new FieldModifierContext(_ctx, getState());
-		enterRule(_localctx, 84, RULE_fieldModifier);
+		enterRule(_localctx, 82, RULE_fieldModifier);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(508);
+			setState(503);
 			_la = _input.LA(1);
-			if ( !(((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (Abstract - 65)) | (1L << (Static - 65)) | (1L << (AccessModifier - 65)))) != 0)) ) {
+			if ( !(((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (Abstract - 67)) | (1L << (Static - 67)) | (1L << (AccessModifier - 67)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			consume();
@@ -2714,12 +2668,12 @@ public class PHPParser extends Parser {
 
 	public final FieldNameContext fieldName() throws RecognitionException {
 		FieldNameContext _localctx = new FieldNameContext(_ctx, getState());
-		enterRule(_localctx, 86, RULE_fieldName);
+		enterRule(_localctx, 84, RULE_fieldName);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(510); match(Dollar);
-			setState(511); variablename();
+			setState(505); match(Dollar);
+			setState(506); variablename();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2760,14 +2714,14 @@ public class PHPParser extends Parser {
 
 	public final FunctionDefinitionContext functionDefinition() throws RecognitionException {
 		FunctionDefinitionContext _localctx = new FunctionDefinitionContext(_ctx, getState());
-		enterRule(_localctx, 88, RULE_functionDefinition);
+		enterRule(_localctx, 86, RULE_functionDefinition);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(513); match(Function);
-			setState(514); functionName();
-			setState(515); parametersDefinition();
-			setState(516); bracketedBlock();
+			setState(508); match(Function);
+			setState(509); functionName();
+			setState(510); parametersDefinition();
+			setState(511); bracketedBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2810,35 +2764,35 @@ public class PHPParser extends Parser {
 
 	public final ParametersDefinitionContext parametersDefinition() throws RecognitionException {
 		ParametersDefinitionContext _localctx = new ParametersDefinitionContext(_ctx, getState());
-		enterRule(_localctx, 90, RULE_parametersDefinition);
+		enterRule(_localctx, 88, RULE_parametersDefinition);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(518); match(OpenRoundBracket);
-			setState(527);
+			setState(513); match(OpenRoundBracket);
+			setState(522);
 			_la = _input.LA(1);
 			if (_la==Ampersand || _la==Dollar) {
 				{
-				setState(519); paramDef();
-				setState(524);
+				setState(514); paramDef();
+				setState(519);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==Comma) {
 					{
 					{
-					setState(520); match(Comma);
-					setState(521); paramDef();
+					setState(515); match(Comma);
+					setState(516); paramDef();
 					}
 					}
-					setState(526);
+					setState(521);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
 				}
 			}
 
-			setState(529); match(CloseRoundBracket);
+			setState(524); match(CloseRoundBracket);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2875,12 +2829,12 @@ public class PHPParser extends Parser {
 
 	public final FunctionInvocationContext functionInvocation() throws RecognitionException {
 		FunctionInvocationContext _localctx = new FunctionInvocationContext(_ctx, getState());
-		enterRule(_localctx, 92, RULE_functionInvocation);
+		enterRule(_localctx, 90, RULE_functionInvocation);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(531); functionName();
-			setState(532); functionInvocationParameters();
+			setState(526); functionName();
+			setState(527); functionInvocationParameters();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2912,11 +2866,11 @@ public class PHPParser extends Parser {
 
 	public final FunctionNameContext functionName() throws RecognitionException {
 		FunctionNameContext _localctx = new FunctionNameContext(_ctx, getState());
-		enterRule(_localctx, 94, RULE_functionName);
+		enterRule(_localctx, 92, RULE_functionName);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(534); match(Identifier);
+			setState(529); match(Identifier);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2952,31 +2906,31 @@ public class PHPParser extends Parser {
 
 	public final FunctionInvocationParametersContext functionInvocationParameters() throws RecognitionException {
 		FunctionInvocationParametersContext _localctx = new FunctionInvocationParametersContext(_ctx, getState());
-		enterRule(_localctx, 96, RULE_functionInvocationParameters);
+		enterRule(_localctx, 94, RULE_functionInvocationParameters);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(537);
+			setState(532);
 			switch ( getInterpreter().adaptivePredict(_input,43,_ctx) ) {
 			case 1:
 				{
-				setState(536); match(OpenRoundBracket);
+				setState(531); match(OpenRoundBracket);
 				}
 				break;
 			}
-			setState(540);
+			setState(535);
 			switch ( getInterpreter().adaptivePredict(_input,44,_ctx) ) {
 			case 1:
 				{
-				setState(539); commaList();
+				setState(534); commaList();
 				}
 				break;
 			}
-			setState(543);
+			setState(538);
 			switch ( getInterpreter().adaptivePredict(_input,45,_ctx) ) {
 			case 1:
 				{
-				setState(542); match(CloseRoundBracket);
+				setState(537); match(CloseRoundBracket);
 				}
 				break;
 			}
@@ -3017,18 +2971,18 @@ public class PHPParser extends Parser {
 
 	public final ParamDefContext paramDef() throws RecognitionException {
 		ParamDefContext _localctx = new ParamDefContext(_ctx, getState());
-		enterRule(_localctx, 98, RULE_paramDef);
+		enterRule(_localctx, 96, RULE_paramDef);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(545); paramName();
-			setState(548);
+			setState(540); paramName();
+			setState(543);
 			_la = _input.LA(1);
 			if (_la==Equals) {
 				{
-				setState(546); match(Equals);
-				setState(547); atom();
+				setState(541); match(Equals);
+				setState(542); atom();
 				}
 			}
 
@@ -3065,23 +3019,23 @@ public class PHPParser extends Parser {
 
 	public final ParamNameContext paramName() throws RecognitionException {
 		ParamNameContext _localctx = new ParamNameContext(_ctx, getState());
-		enterRule(_localctx, 100, RULE_paramName);
+		enterRule(_localctx, 98, RULE_paramName);
 		try {
-			setState(555);
+			setState(550);
 			switch (_input.LA(1)) {
 			case Dollar:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(550); match(Dollar);
-				setState(551); match(Identifier);
+				setState(545); match(Dollar);
+				setState(546); match(Identifier);
 				}
 				break;
 			case Ampersand:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(552); match(Ampersand);
-				setState(553); match(Dollar);
-				setState(554); match(Identifier);
+				setState(547); match(Ampersand);
+				setState(548); match(Dollar);
+				setState(549); match(Identifier);
 				}
 				break;
 			default:
@@ -3122,25 +3076,25 @@ public class PHPParser extends Parser {
 
 	public final CommaListContext commaList() throws RecognitionException {
 		CommaListContext _localctx = new CommaListContext(_ctx, getState());
-		enterRule(_localctx, 102, RULE_commaList);
+		enterRule(_localctx, 100, RULE_commaList);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(557); expression();
-			setState(562);
+			setState(552); expression();
+			setState(557);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,48,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(558); match(Comma);
-					setState(559); expression();
+					setState(553); match(Comma);
+					setState(554); expression();
 					}
 					} 
 				}
-				setState(564);
+				setState(559);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,48,_ctx);
 			}
@@ -3177,11 +3131,11 @@ public class PHPParser extends Parser {
 
 	public final ExpressionContext expression() throws RecognitionException {
 		ExpressionContext _localctx = new ExpressionContext(_ctx, getState());
-		enterRule(_localctx, 104, RULE_expression);
+		enterRule(_localctx, 102, RULE_expression);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(565); weakLogicalOr();
+			setState(560); weakLogicalOr();
 			}
 		}
 		catch (RecognitionException re) {
@@ -3222,25 +3176,25 @@ public class PHPParser extends Parser {
 
 	public final WeakLogicalOrContext weakLogicalOr() throws RecognitionException {
 		WeakLogicalOrContext _localctx = new WeakLogicalOrContext(_ctx, getState());
-		enterRule(_localctx, 106, RULE_weakLogicalOr);
+		enterRule(_localctx, 104, RULE_weakLogicalOr);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(567); weakLogicalXor();
-			setState(572);
+			setState(562); weakLogicalXor();
+			setState(567);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,49,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(568); match(Or);
-					setState(569); weakLogicalXor();
+					setState(563); match(Or);
+					setState(564); weakLogicalXor();
 					}
 					} 
 				}
-				setState(574);
+				setState(569);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,49,_ctx);
 			}
@@ -3284,25 +3238,25 @@ public class PHPParser extends Parser {
 
 	public final WeakLogicalXorContext weakLogicalXor() throws RecognitionException {
 		WeakLogicalXorContext _localctx = new WeakLogicalXorContext(_ctx, getState());
-		enterRule(_localctx, 108, RULE_weakLogicalXor);
+		enterRule(_localctx, 106, RULE_weakLogicalXor);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(575); weakLogicalAnd();
-			setState(580);
+			setState(570); weakLogicalAnd();
+			setState(575);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,50,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(576); match(Xor);
-					setState(577); weakLogicalAnd();
+					setState(571); match(Xor);
+					setState(572); weakLogicalAnd();
 					}
 					} 
 				}
-				setState(582);
+				setState(577);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,50,_ctx);
 			}
@@ -3346,25 +3300,25 @@ public class PHPParser extends Parser {
 
 	public final WeakLogicalAndContext weakLogicalAnd() throws RecognitionException {
 		WeakLogicalAndContext _localctx = new WeakLogicalAndContext(_ctx, getState());
-		enterRule(_localctx, 110, RULE_weakLogicalAnd);
+		enterRule(_localctx, 108, RULE_weakLogicalAnd);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(583); assignment();
-			setState(588);
+			setState(578); assignment();
+			setState(583);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,51,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(584); match(And);
-					setState(585); assignment();
+					setState(579); match(And);
+					setState(580); assignment();
 					}
 					} 
 				}
-				setState(590);
+				setState(585);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,51,_ctx);
 			}
@@ -3409,23 +3363,23 @@ public class PHPParser extends Parser {
 
 	public final AssignmentContext assignment() throws RecognitionException {
 		AssignmentContext _localctx = new AssignmentContext(_ctx, getState());
-		enterRule(_localctx, 112, RULE_assignment);
+		enterRule(_localctx, 110, RULE_assignment);
 		int _la;
 		try {
-			setState(596);
+			setState(591);
 			switch ( getInterpreter().adaptivePredict(_input,52,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(591); listVariables();
+				setState(586); listVariables();
 				{
-				setState(592);
+				setState(587);
 				_la = _input.LA(1);
 				if ( !(_la==Equals || _la==AssignmentOperator) ) {
 				_errHandler.recoverInline(this);
 				}
 				consume();
-				setState(593); assignment();
+				setState(588); assignment();
 				}
 				}
 				break;
@@ -3433,7 +3387,7 @@ public class PHPParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(595); ternary();
+				setState(590); ternary();
 				}
 				break;
 			}
@@ -3475,39 +3429,39 @@ public class PHPParser extends Parser {
 
 	public final ListVariablesContext listVariables() throws RecognitionException {
 		ListVariablesContext _localctx = new ListVariablesContext(_ctx, getState());
-		enterRule(_localctx, 114, RULE_listVariables);
+		enterRule(_localctx, 112, RULE_listVariables);
 		int _la;
 		try {
-			setState(611);
+			setState(606);
 			switch (_input.LA(1)) {
 			case List:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(598); match(List);
-				setState(599); match(OpenRoundBracket);
-				setState(600); name();
-				setState(605);
+				setState(593); match(List);
+				setState(594); match(OpenRoundBracket);
+				setState(595); name();
+				setState(600);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==Comma) {
 					{
 					{
-					setState(601); match(Comma);
-					setState(602); name();
+					setState(596); match(Comma);
+					setState(597); name();
 					}
 					}
-					setState(607);
+					setState(602);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(608); match(CloseRoundBracket);
+				setState(603); match(CloseRoundBracket);
 				}
 				break;
 			case Dollar:
 			case Identifier:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(610); name();
+				setState(605); name();
 				}
 				break;
 			default:
@@ -3553,25 +3507,25 @@ public class PHPParser extends Parser {
 
 	public final TernaryContext ternary() throws RecognitionException {
 		TernaryContext _localctx = new TernaryContext(_ctx, getState());
-		enterRule(_localctx, 116, RULE_ternary);
+		enterRule(_localctx, 114, RULE_ternary);
 		try {
-			setState(620);
+			setState(615);
 			switch ( getInterpreter().adaptivePredict(_input,55,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(613); logicalOr();
-				setState(614); match(QuestionMark);
-				setState(615); expression();
-				setState(616); match(Colon);
-				setState(617); expression();
+				setState(608); logicalOr();
+				setState(609); match(QuestionMark);
+				setState(610); expression();
+				setState(611); match(Colon);
+				setState(612); expression();
 				}
 				break;
 
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(619); logicalOr();
+				setState(614); logicalOr();
 				}
 				break;
 			}
@@ -3614,25 +3568,25 @@ public class PHPParser extends Parser {
 
 	public final LogicalOrContext logicalOr() throws RecognitionException {
 		LogicalOrContext _localctx = new LogicalOrContext(_ctx, getState());
-		enterRule(_localctx, 118, RULE_logicalOr);
+		enterRule(_localctx, 116, RULE_logicalOr);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(622); logicalAnd();
-			setState(627);
+			setState(617); logicalAnd();
+			setState(622);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,56,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(623); match(LogicalOr);
-					setState(624); logicalAnd();
+					setState(618); match(LogicalOr);
+					setState(619); logicalAnd();
 					}
 					} 
 				}
-				setState(629);
+				setState(624);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,56,_ctx);
 			}
@@ -3676,25 +3630,25 @@ public class PHPParser extends Parser {
 
 	public final LogicalAndContext logicalAnd() throws RecognitionException {
 		LogicalAndContext _localctx = new LogicalAndContext(_ctx, getState());
-		enterRule(_localctx, 120, RULE_logicalAnd);
+		enterRule(_localctx, 118, RULE_logicalAnd);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(630); bitwiseOr();
-			setState(635);
+			setState(625); bitwiseOr();
+			setState(630);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,57,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(631); match(LogicalAnd);
-					setState(632); bitwiseOr();
+					setState(626); match(LogicalAnd);
+					setState(627); bitwiseOr();
 					}
 					} 
 				}
-				setState(637);
+				setState(632);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,57,_ctx);
 			}
@@ -3738,25 +3692,25 @@ public class PHPParser extends Parser {
 
 	public final BitwiseOrContext bitwiseOr() throws RecognitionException {
 		BitwiseOrContext _localctx = new BitwiseOrContext(_ctx, getState());
-		enterRule(_localctx, 122, RULE_bitwiseOr);
+		enterRule(_localctx, 120, RULE_bitwiseOr);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(638); bitWiseAnd();
-			setState(643);
+			setState(633); bitWiseAnd();
+			setState(638);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,58,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(639); match(Pipe);
-					setState(640); bitWiseAnd();
+					setState(634); match(Pipe);
+					setState(635); bitWiseAnd();
 					}
 					} 
 				}
-				setState(645);
+				setState(640);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,58,_ctx);
 			}
@@ -3800,25 +3754,25 @@ public class PHPParser extends Parser {
 
 	public final BitWiseAndContext bitWiseAnd() throws RecognitionException {
 		BitWiseAndContext _localctx = new BitWiseAndContext(_ctx, getState());
-		enterRule(_localctx, 124, RULE_bitWiseAnd);
+		enterRule(_localctx, 122, RULE_bitWiseAnd);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(646); equalityCheck();
-			setState(651);
+			setState(641); equalityCheck();
+			setState(646);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,59,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(647); match(Ampersand);
-					setState(648); equalityCheck();
+					setState(642); match(Ampersand);
+					setState(643); equalityCheck();
 					}
 					} 
 				}
-				setState(653);
+				setState(648);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,59,_ctx);
 			}
@@ -3859,17 +3813,17 @@ public class PHPParser extends Parser {
 
 	public final EqualityCheckContext equalityCheck() throws RecognitionException {
 		EqualityCheckContext _localctx = new EqualityCheckContext(_ctx, getState());
-		enterRule(_localctx, 126, RULE_equalityCheck);
+		enterRule(_localctx, 124, RULE_equalityCheck);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(654); comparisionCheck();
-			setState(657);
+			setState(649); comparisionCheck();
+			setState(652);
 			switch ( getInterpreter().adaptivePredict(_input,60,_ctx) ) {
 			case 1:
 				{
-				setState(655); match(EqualityOperator);
-				setState(656); comparisionCheck();
+				setState(650); match(EqualityOperator);
+				setState(651); comparisionCheck();
 				}
 				break;
 			}
@@ -3910,17 +3864,17 @@ public class PHPParser extends Parser {
 
 	public final ComparisionCheckContext comparisionCheck() throws RecognitionException {
 		ComparisionCheckContext _localctx = new ComparisionCheckContext(_ctx, getState());
-		enterRule(_localctx, 128, RULE_comparisionCheck);
+		enterRule(_localctx, 126, RULE_comparisionCheck);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(659); bitWiseShift();
-			setState(662);
+			setState(654); bitWiseShift();
+			setState(657);
 			switch ( getInterpreter().adaptivePredict(_input,61,_ctx) ) {
 			case 1:
 				{
-				setState(660); match(ComparisionOperator);
-				setState(661); bitWiseShift();
+				setState(655); match(ComparisionOperator);
+				setState(656); bitWiseShift();
 				}
 				break;
 			}
@@ -3964,25 +3918,25 @@ public class PHPParser extends Parser {
 
 	public final BitWiseShiftContext bitWiseShift() throws RecognitionException {
 		BitWiseShiftContext _localctx = new BitWiseShiftContext(_ctx, getState());
-		enterRule(_localctx, 130, RULE_bitWiseShift);
+		enterRule(_localctx, 128, RULE_bitWiseShift);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(664); addition();
-			setState(669);
+			setState(659); addition();
+			setState(664);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,62,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(665); match(ShiftOperator);
-					setState(666); addition();
+					setState(660); match(ShiftOperator);
+					setState(661); addition();
 					}
 					} 
 				}
-				setState(671);
+				setState(666);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,62,_ctx);
 			}
@@ -4034,31 +3988,31 @@ public class PHPParser extends Parser {
 
 	public final AdditionContext addition() throws RecognitionException {
 		AdditionContext _localctx = new AdditionContext(_ctx, getState());
-		enterRule(_localctx, 132, RULE_addition);
+		enterRule(_localctx, 130, RULE_addition);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(672); multiplication();
-			setState(677);
+			setState(667); multiplication();
+			setState(672);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,63,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(673);
+					setState(668);
 					_la = _input.LA(1);
 					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Plus) | (1L << Minus) | (1L << Dot))) != 0)) ) {
 					_errHandler.recoverInline(this);
 					}
 					consume();
-					setState(674); multiplication();
+					setState(669); multiplication();
 					}
 					} 
 				}
-				setState(679);
+				setState(674);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,63,_ctx);
 			}
@@ -4110,31 +4064,31 @@ public class PHPParser extends Parser {
 
 	public final MultiplicationContext multiplication() throws RecognitionException {
 		MultiplicationContext _localctx = new MultiplicationContext(_ctx, getState());
-		enterRule(_localctx, 134, RULE_multiplication);
+		enterRule(_localctx, 132, RULE_multiplication);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(680); logicalNot();
-			setState(685);
+			setState(675); logicalNot();
+			setState(680);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,64,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(681);
+					setState(676);
 					_la = _input.LA(1);
 					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Asterisk) | (1L << Percent) | (1L << Forwardslash))) != 0)) ) {
 					_errHandler.recoverInline(this);
 					}
 					consume();
-					setState(682); logicalNot();
+					setState(677); logicalNot();
 					}
 					} 
 				}
-				setState(687);
+				setState(682);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,64,_ctx);
 			}
@@ -4175,15 +4129,15 @@ public class PHPParser extends Parser {
 
 	public final LogicalNotContext logicalNot() throws RecognitionException {
 		LogicalNotContext _localctx = new LogicalNotContext(_ctx, getState());
-		enterRule(_localctx, 136, RULE_logicalNot);
+		enterRule(_localctx, 134, RULE_logicalNot);
 		try {
-			setState(691);
+			setState(686);
 			switch (_input.LA(1)) {
 			case Bang:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(688); match(Bang);
-				setState(689); logicalNot();
+				setState(683); match(Bang);
+				setState(684); logicalNot();
 				}
 				break;
 			case New:
@@ -4206,7 +4160,7 @@ public class PHPParser extends Parser {
 			case IncrementOperator:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(690); instanceOf();
+				setState(685); instanceOf();
 				}
 				break;
 			default:
@@ -4248,17 +4202,17 @@ public class PHPParser extends Parser {
 
 	public final InstanceOfContext instanceOf() throws RecognitionException {
 		InstanceOfContext _localctx = new InstanceOfContext(_ctx, getState());
-		enterRule(_localctx, 138, RULE_instanceOf);
+		enterRule(_localctx, 136, RULE_instanceOf);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(693); negateOrCast();
-			setState(696);
+			setState(688); negateOrCast();
+			setState(691);
 			switch ( getInterpreter().adaptivePredict(_input,66,_ctx) ) {
 			case 1:
 				{
-				setState(694); match(Instanceof);
-				setState(695); negateOrCast();
+				setState(689); match(Instanceof);
+				setState(690); negateOrCast();
 				}
 				break;
 			}
@@ -4304,47 +4258,47 @@ public class PHPParser extends Parser {
 
 	public final NegateOrCastContext negateOrCast() throws RecognitionException {
 		NegateOrCastContext _localctx = new NegateOrCastContext(_ctx, getState());
-		enterRule(_localctx, 140, RULE_negateOrCast);
+		enterRule(_localctx, 138, RULE_negateOrCast);
 		int _la;
 		try {
-			setState(709);
+			setState(704);
 			switch ( getInterpreter().adaptivePredict(_input,67,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(698);
+				setState(693);
 				_la = _input.LA(1);
 				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings))) != 0)) ) {
 				_errHandler.recoverInline(this);
 				}
 				consume();
-				setState(699); increment();
+				setState(694); increment();
 				}
 				break;
 
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(700); match(OpenRoundBracket);
-				setState(701); match(PrimitiveType);
-				setState(702); match(CloseRoundBracket);
-				setState(703); increment();
+				setState(695); match(OpenRoundBracket);
+				setState(696); match(PrimitiveType);
+				setState(697); match(CloseRoundBracket);
+				setState(698); increment();
 				}
 				break;
 
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(704); match(OpenRoundBracket);
-				setState(705); weakLogicalAnd();
-				setState(706); match(CloseRoundBracket);
+				setState(699); match(OpenRoundBracket);
+				setState(700); weakLogicalAnd();
+				setState(701); match(CloseRoundBracket);
 				}
 				break;
 
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(708); increment();
+				setState(703); increment();
 				}
 				break;
 			}
@@ -4384,30 +4338,30 @@ public class PHPParser extends Parser {
 
 	public final IncrementContext increment() throws RecognitionException {
 		IncrementContext _localctx = new IncrementContext(_ctx, getState());
-		enterRule(_localctx, 142, RULE_increment);
+		enterRule(_localctx, 140, RULE_increment);
 		try {
-			setState(717);
+			setState(712);
 			switch ( getInterpreter().adaptivePredict(_input,68,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(711); match(IncrementOperator);
-				setState(712); name();
+				setState(706); match(IncrementOperator);
+				setState(707); name();
 				}
 				break;
 
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(713); name();
-				setState(714); match(IncrementOperator);
+				setState(708); name();
+				setState(709); match(IncrementOperator);
 				}
 				break;
 
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(716); newOrClone();
+				setState(711); newOrClone();
 				}
 				break;
 			}
@@ -4448,22 +4402,22 @@ public class PHPParser extends Parser {
 
 	public final NewOrCloneContext newOrClone() throws RecognitionException {
 		NewOrCloneContext _localctx = new NewOrCloneContext(_ctx, getState());
-		enterRule(_localctx, 144, RULE_newOrClone);
+		enterRule(_localctx, 142, RULE_newOrClone);
 		try {
-			setState(724);
+			setState(719);
 			switch (_input.LA(1)) {
 			case New:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(719); match(New);
-				setState(720); name();
+				setState(714); match(New);
+				setState(715); name();
 				}
 				break;
 			case Clone:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(721); match(Clone);
-				setState(722); name();
+				setState(716); match(Clone);
+				setState(717); name();
 				}
 				break;
 			case Ampersand:
@@ -4479,7 +4433,7 @@ public class PHPParser extends Parser {
 			case Identifier:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(723); atomOrReference();
+				setState(718); atomOrReference();
 				}
 				break;
 			default:
@@ -4520,21 +4474,21 @@ public class PHPParser extends Parser {
 
 	public final AtomOrReferenceContext atomOrReference() throws RecognitionException {
 		AtomOrReferenceContext _localctx = new AtomOrReferenceContext(_ctx, getState());
-		enterRule(_localctx, 146, RULE_atomOrReference);
+		enterRule(_localctx, 144, RULE_atomOrReference);
 		try {
-			setState(728);
+			setState(723);
 			switch ( getInterpreter().adaptivePredict(_input,70,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(726); atom();
+				setState(721); atom();
 				}
 				break;
 
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(727); reference();
+				setState(722); reference();
 				}
 				break;
 			}
@@ -4580,36 +4534,36 @@ public class PHPParser extends Parser {
 
 	public final ArrayDeclarationContext arrayDeclaration() throws RecognitionException {
 		ArrayDeclarationContext _localctx = new ArrayDeclarationContext(_ctx, getState());
-		enterRule(_localctx, 148, RULE_arrayDeclaration);
+		enterRule(_localctx, 146, RULE_arrayDeclaration);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(730); match(Array);
-			setState(731); match(OpenRoundBracket);
-			setState(740);
+			setState(725); match(Array);
+			setState(726); match(OpenRoundBracket);
+			setState(735);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << List) | (1L << New) | (1L << Clone) | (1L << Ampersand) | (1L << Bang) | (1L << Minus) | (1L << Tilde) | (1L << SuppressWarnings) | (1L << Dollar) | (1L << OpenRoundBracket))) != 0) || ((((_la - 69)) & ~0x3f) == 0 && ((1L << (_la - 69)) & ((1L << (Array - 69)) | (1L << (DecimalNumber - 69)) | (1L << (HexNumber - 69)) | (1L << (OctalNumber - 69)) | (1L << (Float - 69)) | (1L << (Boolean - 69)) | (1L << (SingleQuotedString - 69)) | (1L << (DoubleQuotedString - 69)) | (1L << (Identifier - 69)) | (1L << (IncrementOperator - 69)))) != 0)) {
 				{
-				setState(732); arrayEntry();
-				setState(737);
+				setState(727); arrayEntry();
+				setState(732);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==Comma) {
 					{
 					{
-					setState(733); match(Comma);
-					setState(734); arrayEntry();
+					setState(728); match(Comma);
+					setState(729); arrayEntry();
 					}
 					}
-					setState(739);
+					setState(734);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
 				}
 			}
 
-			setState(742); match(CloseRoundBracket);
+			setState(737); match(CloseRoundBracket);
 			}
 		}
 		catch (RecognitionException re) {
@@ -4646,21 +4600,21 @@ public class PHPParser extends Parser {
 
 	public final ArrayEntryContext arrayEntry() throws RecognitionException {
 		ArrayEntryContext _localctx = new ArrayEntryContext(_ctx, getState());
-		enterRule(_localctx, 150, RULE_arrayEntry);
+		enterRule(_localctx, 148, RULE_arrayEntry);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(746);
+			setState(741);
 			switch ( getInterpreter().adaptivePredict(_input,73,_ctx) ) {
 			case 1:
 				{
-				setState(744); keyValuePair();
+				setState(739); keyValuePair();
 				}
 				break;
 
 			case 2:
 				{
-				setState(745); expression();
+				setState(740); expression();
 				}
 				break;
 			}
@@ -4701,14 +4655,14 @@ public class PHPParser extends Parser {
 
 	public final KeyValuePairContext keyValuePair() throws RecognitionException {
 		KeyValuePairContext _localctx = new KeyValuePairContext(_ctx, getState());
-		enterRule(_localctx, 152, RULE_keyValuePair);
+		enterRule(_localctx, 150, RULE_keyValuePair);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			setState(748); expression();
-			setState(749); match(ArrayAssign);
-			setState(750); expression();
+			setState(743); expression();
+			setState(744); match(ArrayAssign);
+			setState(745); expression();
 			}
 			}
 		}
@@ -4755,9 +4709,9 @@ public class PHPParser extends Parser {
 
 	public final AtomContext atom() throws RecognitionException {
 		AtomContext _localctx = new AtomContext(_ctx, getState());
-		enterRule(_localctx, 154, RULE_atom);
+		enterRule(_localctx, 152, RULE_atom);
 		try {
-			setState(757);
+			setState(752);
 			switch (_input.LA(1)) {
 			case DecimalNumber:
 			case HexNumber:
@@ -4765,32 +4719,32 @@ public class PHPParser extends Parser {
 			case Float:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(752); number();
+				setState(747); number();
 				}
 				break;
 			case SingleQuotedString:
 			case DoubleQuotedString:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(753); string();
+				setState(748); string();
 				}
 				break;
 			case Boolean:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(754); bool();
+				setState(749); bool();
 				}
 				break;
 			case Array:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(755); arrayDeclaration();
+				setState(750); arrayDeclaration();
 				}
 				break;
 			case Identifier:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(756); functionInvocation();
+				setState(751); functionInvocation();
 				}
 				break;
 			default:
@@ -4829,22 +4783,22 @@ public class PHPParser extends Parser {
 
 	public final ReferenceContext reference() throws RecognitionException {
 		ReferenceContext _localctx = new ReferenceContext(_ctx, getState());
-		enterRule(_localctx, 156, RULE_reference);
+		enterRule(_localctx, 154, RULE_reference);
 		try {
-			setState(762);
+			setState(757);
 			switch (_input.LA(1)) {
 			case Ampersand:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(759); match(Ampersand);
-				setState(760); name();
+				setState(754); match(Ampersand);
+				setState(755); name();
 				}
 				break;
 			case Dollar:
 			case Identifier:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(761); name();
+				setState(756); name();
 				}
 				break;
 			default:
@@ -4880,11 +4834,11 @@ public class PHPParser extends Parser {
 
 	public final BoolContext bool() throws RecognitionException {
 		BoolContext _localctx = new BoolContext(_ctx, getState());
-		enterRule(_localctx, 158, RULE_bool);
+		enterRule(_localctx, 156, RULE_bool);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(764); match(Boolean);
+			setState(759); match(Boolean);
 			}
 		}
 		catch (RecognitionException re) {
@@ -4921,22 +4875,22 @@ public class PHPParser extends Parser {
 
 	public final NumberContext number() throws RecognitionException {
 		NumberContext _localctx = new NumberContext(_ctx, getState());
-		enterRule(_localctx, 160, RULE_number);
+		enterRule(_localctx, 158, RULE_number);
 		try {
-			setState(768);
+			setState(763);
 			switch (_input.LA(1)) {
 			case DecimalNumber:
 			case HexNumber:
 			case OctalNumber:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(766); integer();
+				setState(761); integer();
 				}
 				break;
 			case Float:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(767); real();
+				setState(762); real();
 				}
 				break;
 			default:
@@ -4974,12 +4928,12 @@ public class PHPParser extends Parser {
 
 	public final IntegerContext integer() throws RecognitionException {
 		IntegerContext _localctx = new IntegerContext(_ctx, getState());
-		enterRule(_localctx, 162, RULE_integer);
+		enterRule(_localctx, 160, RULE_integer);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(770);
+			setState(765);
 			_la = _input.LA(1);
 			if ( !(((((_la - 73)) & ~0x3f) == 0 && ((1L << (_la - 73)) & ((1L << (DecimalNumber - 73)) | (1L << (HexNumber - 73)) | (1L << (OctalNumber - 73)))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -5027,20 +4981,20 @@ public class PHPParser extends Parser {
 
 	public final RealContext real() throws RecognitionException {
 		RealContext _localctx = new RealContext(_ctx, getState());
-		enterRule(_localctx, 164, RULE_real);
+		enterRule(_localctx, 162, RULE_real);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(772); match(Float);
-			setState(777);
+			setState(767); match(Float);
+			setState(772);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==RealE) {
 				{
 				{
-				setState(773); match(RealE);
-				setState(774);
+				setState(768); match(RealE);
+				setState(769);
 				_la = _input.LA(1);
 				if ( !(_la==DecimalNumber || _la==Float) ) {
 				_errHandler.recoverInline(this);
@@ -5048,7 +5002,7 @@ public class PHPParser extends Parser {
 				consume();
 				}
 				}
-				setState(779);
+				setState(774);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -5084,12 +5038,12 @@ public class PHPParser extends Parser {
 
 	public final StringContext string() throws RecognitionException {
 		StringContext _localctx = new StringContext(_ctx, getState());
-		enterRule(_localctx, 166, RULE_string);
+		enterRule(_localctx, 164, RULE_string);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(780);
+			setState(775);
 			_la = _input.LA(1);
 			if ( !(_la==SingleQuotedString || _la==DoubleQuotedString) ) {
 			_errHandler.recoverInline(this);
@@ -5109,7 +5063,7 @@ public class PHPParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\uacf5\uee8c\u4f5d\u8b0d\u4a45\u78bd\u1b2f\u3378\3Z\u0311\4\2\t\2\4"+
+		"\3\uacf5\uee8c\u4f5d\u8b0d\u4a45\u78bd\u1b2f\u3378\3Z\u030c\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -5119,279 +5073,278 @@ public class PHPParser extends Parser {
 		"\64\4\65\t\65\4\66\t\66\4\67\t\67\48\t8\49\t9\4:\t:\4;\t;\4<\t<\4=\t="+
 		"\4>\t>\4?\t?\4@\t@\4A\tA\4B\tB\4C\tC\4D\tD\4E\tE\4F\tF\4G\tG\4H\tH\4I"+
 		"\tI\4J\tJ\4K\tK\4L\tL\4M\tM\4N\tN\4O\tO\4P\tP\4Q\tQ\4R\tR\4S\tS\4T\tT"+
-		"\4U\tU\3\2\3\2\7\2\u00ad\n\2\f\2\16\2\u00b0\13\2\3\3\5\3\u00b3\n\3\3\3"+
-		"\6\3\u00b6\n\3\r\3\16\3\u00b7\3\4\3\4\3\5\3\5\7\5\u00be\n\5\f\5\16\5\u00c1"+
-		"\13\5\3\5\5\5\u00c4\n\5\3\6\3\6\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3"+
-		"\b\3\b\3\b\3\b\3\b\5\b\u00d6\n\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u00df"+
-		"\n\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13"+
-		"\3\13\3\13\3\13\3\13\3\13\7\13\u00f5\n\13\f\13\16\13\u00f8\13\13\3\13"+
-		"\3\13\5\13\u00fc\n\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\5\r"+
-		"\u0109\n\r\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\17\3"+
-		"\17\3\17\3\17\3\17\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\5"+
-		"\20\u0125\n\20\3\21\3\21\3\21\3\21\7\21\u012b\n\21\f\21\16\21\u012e\13"+
-		"\21\3\22\5\22\u0131\n\22\3\22\3\22\3\22\3\22\3\23\3\23\5\23\u0139\n\23"+
-		"\3\24\3\24\5\24\u013d\n\24\3\25\3\25\5\25\u0141\n\25\3\26\3\26\3\26\3"+
-		"\27\7\27\u0147\n\27\f\27\16\27\u014a\13\27\3\27\3\27\3\30\3\30\3\30\3"+
-		"\30\7\30\u0152\n\30\f\30\16\30\u0155\13\30\3\31\3\31\3\31\7\31\u015a\n"+
-		"\31\f\31\16\31\u015d\13\31\3\32\3\32\3\33\3\33\3\33\3\33\3\33\3\33\3\33"+
-		"\5\33\u0168\n\33\3\34\3\34\3\35\3\35\3\35\5\35\u016f\n\35\3\36\3\36\3"+
-		"\36\3\36\3\37\3\37\3\37\3\37\3\37\7\37\u017a\n\37\f\37\16\37\u017d\13"+
-		"\37\3 \3 \7 \u0181\n \f \16 \u0184\13 \3 \3 \3!\3!\3!\5!\u018b\n!\3!\3"+
-		"!\7!\u018f\n!\f!\16!\u0192\13!\3!\3!\3\"\3\"\3#\3#\3#\3#\7#\u019c\n#\f"+
-		"#\16#\u019f\13#\3$\3$\3$\3$\5$\u01a5\n$\3$\3$\7$\u01a9\n$\f$\16$\u01ac"+
-		"\13$\3$\3$\3$\3$\3$\5$\u01b3\n$\3%\3%\3&\5&\u01b8\n&\3&\3&\3&\3&\5&\u01be"+
-		"\n&\3&\5&\u01c1\n&\3&\3&\7&\u01c5\n&\f&\16&\u01c8\13&\3&\3&\3\'\3\'\3"+
-		"\'\3\'\7\'\u01d0\n\'\f\'\16\'\u01d3\13\'\3(\7(\u01d6\n(\f(\16(\u01d9\13"+
-		"(\3(\3(\3(\3(\3(\5(\u01e0\n(\3(\3(\3(\3(\5(\u01e6\n(\3(\7(\u01e9\n(\f"+
-		"(\16(\u01ec\13(\3(\3(\3(\5(\u01f1\n(\3)\3)\3*\3*\3*\3*\3*\3+\3+\3+\5+"+
-		"\u01fd\n+\3,\3,\3-\3-\3-\3.\3.\3.\3.\3.\3/\3/\3/\3/\7/\u020d\n/\f/\16"+
-		"/\u0210\13/\5/\u0212\n/\3/\3/\3\60\3\60\3\60\3\61\3\61\3\62\5\62\u021c"+
-		"\n\62\3\62\5\62\u021f\n\62\3\62\5\62\u0222\n\62\3\63\3\63\3\63\5\63\u0227"+
-		"\n\63\3\64\3\64\3\64\3\64\3\64\5\64\u022e\n\64\3\65\3\65\3\65\7\65\u0233"+
-		"\n\65\f\65\16\65\u0236\13\65\3\66\3\66\3\67\3\67\3\67\7\67\u023d\n\67"+
-		"\f\67\16\67\u0240\13\67\38\38\38\78\u0245\n8\f8\168\u0248\138\39\39\3"+
-		"9\79\u024d\n9\f9\169\u0250\139\3:\3:\3:\3:\3:\5:\u0257\n:\3;\3;\3;\3;"+
-		"\3;\7;\u025e\n;\f;\16;\u0261\13;\3;\3;\3;\5;\u0266\n;\3<\3<\3<\3<\3<\3"+
-		"<\3<\5<\u026f\n<\3=\3=\3=\7=\u0274\n=\f=\16=\u0277\13=\3>\3>\3>\7>\u027c"+
-		"\n>\f>\16>\u027f\13>\3?\3?\3?\7?\u0284\n?\f?\16?\u0287\13?\3@\3@\3@\7"+
-		"@\u028c\n@\f@\16@\u028f\13@\3A\3A\3A\5A\u0294\nA\3B\3B\3B\5B\u0299\nB"+
-		"\3C\3C\3C\7C\u029e\nC\fC\16C\u02a1\13C\3D\3D\3D\7D\u02a6\nD\fD\16D\u02a9"+
-		"\13D\3E\3E\3E\7E\u02ae\nE\fE\16E\u02b1\13E\3F\3F\3F\5F\u02b6\nF\3G\3G"+
-		"\3G\5G\u02bb\nG\3H\3H\3H\3H\3H\3H\3H\3H\3H\3H\3H\5H\u02c8\nH\3I\3I\3I"+
-		"\3I\3I\3I\5I\u02d0\nI\3J\3J\3J\3J\3J\5J\u02d7\nJ\3K\3K\5K\u02db\nK\3L"+
-		"\3L\3L\3L\3L\7L\u02e2\nL\fL\16L\u02e5\13L\5L\u02e7\nL\3L\3L\3M\3M\5M\u02ed"+
-		"\nM\3N\3N\3N\3N\3O\3O\3O\3O\3O\5O\u02f8\nO\3P\3P\3P\5P\u02fd\nP\3Q\3Q"+
-		"\3R\3R\5R\u0303\nR\3S\3S\3T\3T\3T\7T\u030a\nT\fT\16T\u030d\13T\3U\3U\3"+
-		"U\2V\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@"+
-		"BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|~\u0080\u0082\u0084\u0086\u0088\u008a\u008c"+
-		"\u008e\u0090\u0092\u0094\u0096\u0098\u009a\u009c\u009e\u00a0\u00a2\u00a4"+
-		"\u00a6\u00a8\2\n\4\2CDJJ\4\2%%UU\4\2+,\64\64\3\2-/\5\2,,\60\60\62\62\3"+
-		"\2KM\4\2KKNN\4\2QQSS\u0322\2\u00ae\3\2\2\2\4\u00b2\3\2\2\2\6\u00b9\3\2"+
-		"\2\2\b\u00bb\3\2\2\2\n\u00c5\3\2\2\2\f\u00c7\3\2\2\2\16\u00d5\3\2\2\2"+
-		"\20\u00de\3\2\2\2\22\u00e0\3\2\2\2\24\u00ea\3\2\2\2\26\u00fd\3\2\2\2\30"+
-		"\u0105\3\2\2\2\32\u010d\3\2\2\2\34\u0115\3\2\2\2\36\u0124\3\2\2\2 \u0126"+
-		"\3\2\2\2\"\u0130\3\2\2\2$\u0136\3\2\2\2&\u013a\3\2\2\2(\u013e\3\2\2\2"+
-		"*\u0142\3\2\2\2,\u0148\3\2\2\2.\u014d\3\2\2\2\60\u0156\3\2\2\2\62\u015e"+
-		"\3\2\2\2\64\u0167\3\2\2\2\66\u0169\3\2\2\28\u016e\3\2\2\2:\u0170\3\2\2"+
-		"\2<\u0174\3\2\2\2>\u017e\3\2\2\2@\u0187\3\2\2\2B\u0195\3\2\2\2D\u0197"+
-		"\3\2\2\2F\u01b2\3\2\2\2H\u01b4\3\2\2\2J\u01b7\3\2\2\2L\u01cb\3\2\2\2N"+
-		"\u01f0\3\2\2\2P\u01f2\3\2\2\2R\u01f4\3\2\2\2T\u01f9\3\2\2\2V\u01fe\3\2"+
-		"\2\2X\u0200\3\2\2\2Z\u0203\3\2\2\2\\\u0208\3\2\2\2^\u0215\3\2\2\2`\u0218"+
-		"\3\2\2\2b\u021b\3\2\2\2d\u0223\3\2\2\2f\u022d\3\2\2\2h\u022f\3\2\2\2j"+
-		"\u0237\3\2\2\2l\u0239\3\2\2\2n\u0241\3\2\2\2p\u0249\3\2\2\2r\u0256\3\2"+
-		"\2\2t\u0265\3\2\2\2v\u026e\3\2\2\2x\u0270\3\2\2\2z\u0278\3\2\2\2|\u0280"+
-		"\3\2\2\2~\u0288\3\2\2\2\u0080\u0290\3\2\2\2\u0082\u0295\3\2\2\2\u0084"+
-		"\u029a\3\2\2\2\u0086\u02a2\3\2\2\2\u0088\u02aa\3\2\2\2\u008a\u02b5\3\2"+
-		"\2\2\u008c\u02b7\3\2\2\2\u008e\u02c7\3\2\2\2\u0090\u02cf\3\2\2\2\u0092"+
-		"\u02d6\3\2\2\2\u0094\u02da\3\2\2\2\u0096\u02dc\3\2\2\2\u0098\u02ec\3\2"+
-		"\2\2\u009a\u02ee\3\2\2\2\u009c\u02f7\3\2\2\2\u009e\u02fc\3\2\2\2\u00a0"+
-		"\u02fe\3\2\2\2\u00a2\u0302\3\2\2\2\u00a4\u0304\3\2\2\2\u00a6\u0306\3\2"+
-		"\2\2\u00a8\u030e\3\2\2\2\u00aa\u00ad\5\b\5\2\u00ab\u00ad\5\4\3\2\u00ac"+
-		"\u00aa\3\2\2\2\u00ac\u00ab\3\2\2\2\u00ad\u00b0\3\2\2\2\u00ae\u00ac\3\2"+
-		"\2\2\u00ae\u00af\3\2\2\2\u00af\3\3\2\2\2\u00b0\u00ae\3\2\2\2\u00b1\u00b3"+
-		"\7\4\2\2\u00b2\u00b1\3\2\2\2\u00b2\u00b3\3\2\2\2\u00b3\u00b5\3\2\2\2\u00b4"+
-		"\u00b6\5\6\4\2\u00b5\u00b4\3\2\2\2\u00b6\u00b7\3\2\2\2\u00b7\u00b5\3\2"+
-		"\2\2\u00b7\u00b8\3\2\2\2\u00b8\5\3\2\2\2\u00b9\u00ba\7\5\2\2\u00ba\7\3"+
-		"\2\2\2\u00bb\u00bf\5\n\6\2\u00bc\u00be\5\16\b\2\u00bd\u00bc\3\2\2\2\u00be"+
-		"\u00c1\3\2\2\2\u00bf\u00bd\3\2\2\2\u00bf\u00c0\3\2\2\2\u00c0\u00c3\3\2"+
-		"\2\2\u00c1\u00bf\3\2\2\2\u00c2\u00c4\5\f\7\2\u00c3\u00c2\3\2\2\2\u00c3"+
-		"\u00c4\3\2\2\2\u00c4\t\3\2\2\2\u00c5\u00c6\7\3\2\2\u00c6\13\3\2\2\2\u00c7"+
-		"\u00c8\7\7\2\2\u00c8\r\3\2\2\2\u00c9\u00ca\7>\2\2\u00ca\u00cb\5\16\b\2"+
-		"\u00cb\u00cc\7?\2\2\u00cc\u00d6\3\2\2\2\u00cd\u00d6\5> \2\u00ce\u00d6"+
-		"\5J&\2\u00cf\u00d6\5@!\2\u00d0\u00d6\5\20\t\2\u00d1\u00d2\5\36\20\2\u00d2"+
-		"\u00d3\7\13\2\2\u00d3\u00d6\3\2\2\2\u00d4\u00d6\5\62\32\2\u00d5\u00c9"+
-		"\3\2\2\2\u00d5\u00cd\3\2\2\2\u00d5\u00ce\3\2\2\2\u00d5\u00cf\3\2\2\2\u00d5"+
-		"\u00d0\3\2\2\2\u00d5\u00d1\3\2\2\2\u00d5\u00d4\3\2\2\2\u00d6\17\3\2\2"+
-		"\2\u00d7\u00df\5\24\13\2\u00d8\u00df\5\22\n\2\u00d9\u00df\5\26\f\2\u00da"+
-		"\u00df\5\30\r\2\u00db\u00df\5\32\16\2\u00dc\u00df\5\34\17\2\u00dd\u00df"+
-		"\5Z.\2\u00de\u00d7\3\2\2\2\u00de\u00d8\3\2\2\2\u00de\u00d9\3\2\2\2\u00de"+
-		"\u00da\3\2\2\2\u00de\u00db\3\2\2\2\u00de\u00dc\3\2\2\2\u00de\u00dd\3\2"+
-		"\2\2\u00df\21\3\2\2\2\u00e0\u00e1\7\"\2\2\u00e1\u00e2\7:\2\2\u00e2\u00e3"+
-		"\5j\66\2\u00e3\u00e4\7\13\2\2\u00e4\u00e5\5j\66\2\u00e5\u00e6\7\13\2\2"+
-		"\u00e6\u00e7\5j\66\2\u00e7\u00e8\7;\2\2\u00e8\u00e9\5\16\b\2\u00e9\23"+
-		"\3\2\2\2\u00ea\u00eb\7\37\2\2\u00eb\u00ec\7:\2\2\u00ec\u00ed\5j\66\2\u00ed"+
-		"\u00ee\7;\2\2\u00ee\u00f6\5\16\b\2\u00ef\u00f0\7!\2\2\u00f0\u00f1\7:\2"+
-		"\2\u00f1\u00f2\5j\66\2\u00f2\u00f3\7;\2\2\u00f3\u00f5\3\2\2\2\u00f4\u00ef"+
-		"\3\2\2\2\u00f5\u00f8\3\2\2\2\u00f6\u00f4\3\2\2\2\u00f6\u00f7\3\2\2\2\u00f7"+
-		"\u00fb\3\2\2\2\u00f8\u00f6\3\2\2\2\u00f9\u00fa\7 \2\2\u00fa\u00fc\5\16"+
-		"\b\2\u00fb\u00f9\3\2\2\2\u00fb\u00fc\3\2\2\2\u00fc\25\3\2\2\2\u00fd\u00fe"+
-		"\7#\2\2\u00fe\u00ff\7:\2\2\u00ff\u0100\5\64\33\2\u0100\u0101\7\n\2\2\u0101"+
-		"\u0102\5\u0098M\2\u0102\u0103\7;\2\2\u0103\u0104\5\16\b\2\u0104\27\3\2"+
-		"\2\2\u0105\u0106\7$\2\2\u0106\u0108\7:\2\2\u0107\u0109\5j\66\2\u0108\u0107"+
-		"\3\2\2\2\u0108\u0109\3\2\2\2\u0109\u010a\3\2\2\2\u010a\u010b\7;\2\2\u010b"+
-		"\u010c\5\16\b\2\u010c\31\3\2\2\2\u010d\u010e\7\31\2\2\u010e\u010f\5\16"+
-		"\b\2\u010f\u0110\7$\2\2\u0110\u0111\7:\2\2\u0111\u0112\5j\66\2\u0112\u0113"+
-		"\7;\2\2\u0113\u0114\7\13\2\2\u0114\33\3\2\2\2\u0115\u0116\7\32\2\2\u0116"+
-		"\u0117\7:\2\2\u0117\u0118\5j\66\2\u0118\u0119\7;\2\2\u0119\u011a\7>\2"+
-		"\2\u011a\u011b\5,\27\2\u011b\u011c\7?\2\2\u011c\35\3\2\2\2\u011d\u0125"+
-		"\5 \21\2\u011e\u0125\5\"\22\2\u011f\u0125\5$\23\2\u0120\u0125\5&\24\2"+
-		"\u0121\u0125\5(\25\2\u0122\u0125\5*\26\2\u0123\u0125\5j\66\2\u0124\u011d"+
-		"\3\2\2\2\u0124\u011e\3\2\2\2\u0124\u011f\3\2\2\2\u0124\u0120\3\2\2\2\u0124"+
-		"\u0121\3\2\2\2\u0124\u0122\3\2\2\2\u0124\u0123\3\2\2\2\u0125\37\3\2\2"+
-		"\2\u0126\u0127\7\22\2\2\u0127\u012c\58\35\2\u0128\u0129\7A\2\2\u0129\u012b"+
-		"\58\35\2\u012a\u0128\3\2\2\2\u012b\u012e\3\2\2\2\u012c\u012a\3\2\2\2\u012c"+
-		"\u012d\3\2\2\2\u012d!\3\2\2\2\u012e\u012c\3\2\2\2\u012f\u0131\7D\2\2\u0130"+
-		"\u012f\3\2\2\2\u0130\u0131\3\2\2\2\u0131\u0132\3\2\2\2\u0132\u0133\5\64"+
-		"\33\2\u0133\u0134\7%\2\2\u0134\u0135\5j\66\2\u0135#\3\2\2\2\u0136\u0138"+
-		"\7\36\2\2\u0137\u0139\7K\2\2\u0138\u0137\3\2\2\2\u0138\u0139\3\2\2\2\u0139"+
-		"%\3\2\2\2\u013a\u013c\7\23\2\2\u013b\u013d\7K\2\2\u013c\u013b\3\2\2\2"+
-		"\u013c\u013d\3\2\2\2\u013d\'\3\2\2\2\u013e\u0140\7\24\2\2\u013f\u0141"+
-		"\5j\66\2\u0140\u013f\3\2\2\2\u0140\u0141\3\2\2\2\u0141)\3\2\2\2\u0142"+
-		"\u0143\7H\2\2\u0143\u0144\5j\66\2\u0144+\3\2\2\2\u0145\u0147\5.\30\2\u0146"+
-		"\u0145\3\2\2\2\u0147\u014a\3\2\2\2\u0148\u0146\3\2\2\2\u0148\u0149\3\2"+
-		"\2\2\u0149\u014b\3\2\2\2\u014a\u0148\3\2\2\2\u014b\u014c\5\60\31\2\u014c"+
-		"-\3\2\2\2\u014d\u014e\7\33\2\2\u014e\u014f\5j\66\2\u014f\u0153\7B\2\2"+
-		"\u0150\u0152\5\16\b\2\u0151\u0150\3\2\2\2\u0152\u0155\3\2\2\2\u0153\u0151"+
-		"\3\2\2\2\u0153\u0154\3\2\2\2\u0154/\3\2\2\2\u0155\u0153\3\2\2\2\u0156"+
-		"\u0157\7\34\2\2\u0157\u015b\7B\2\2\u0158\u015a\5\16\b\2\u0159\u0158\3"+
-		"\2\2\2\u015a\u015d\3\2\2\2\u015b\u0159\3\2\2\2\u015b\u015c\3\2\2\2\u015c"+
-		"\61\3\2\2\2\u015d\u015b\3\2\2\2\u015e\u015f\7E\2\2\u015f\63\3\2\2\2\u0160"+
-		"\u0161\7\63\2\2\u0161\u0168\5\66\34\2\u0162\u0163\7\63\2\2\u0163\u0164"+
-		"\5\66\34\2\u0164\u0165\7\61\2\2\u0165\u0166\5\66\34\2\u0166\u0168\3\2"+
-		"\2\2\u0167\u0160\3\2\2\2\u0167\u0162\3\2\2\2\u0168\65\3\2\2\2\u0169\u016a"+
-		"\7T\2\2\u016a\67\3\2\2\2\u016b\u016f\5:\36\2\u016c\u016f\5<\37\2\u016d"+
-		"\u016f\5\64\33\2\u016e\u016b\3\2\2\2\u016e\u016c\3\2\2\2\u016e\u016d\3"+
-		"\2\2\2\u016f9\3\2\2\2\u0170\u0171\7T\2\2\u0171\u0172\78\2\2\u0172\u0173"+
-		"\5\64\33\2\u0173;\3\2\2\2\u0174\u017b\5\64\33\2\u0175\u0176\7<\2\2\u0176"+
-		"\u0177\5j\66\2\u0177\u0178\7=\2\2\u0178\u017a\3\2\2\2\u0179\u0175\3\2"+
-		"\2\2\u017a\u017d\3\2\2\2\u017b\u0179\3\2\2\2\u017b\u017c\3\2\2\2\u017c"+
-		"=\3\2\2\2\u017d\u017b\3\2\2\2\u017e\u0182\7>\2\2\u017f\u0181\5\16\b\2"+
-		"\u0180\u017f\3\2\2\2\u0181\u0184\3\2\2\2\u0182\u0180\3\2\2\2\u0182\u0183"+
-		"\3\2\2\2\u0183\u0185\3\2\2\2\u0184\u0182\3\2\2\2\u0185\u0186\7?\2\2\u0186"+
-		"?\3\2\2\2\u0187\u0188\7@\2\2\u0188\u018a\5B\"\2\u0189\u018b\5D#\2\u018a"+
-		"\u0189\3\2\2\2\u018a\u018b\3\2\2\2\u018b\u018c\3\2\2\2\u018c\u0190\7>"+
-		"\2\2\u018d\u018f\5F$\2\u018e\u018d\3\2\2\2\u018f\u0192\3\2\2\2\u0190\u018e"+
-		"\3\2\2\2\u0190\u0191\3\2\2\2\u0191\u0193\3\2\2\2\u0192\u0190\3\2\2\2\u0193"+
-		"\u0194\7?\2\2\u0194A\3\2\2\2\u0195\u0196\7T\2\2\u0196C\3\2\2\2\u0197\u0198"+
-		"\7\30\2\2\u0198\u019d\5B\"\2\u0199\u019a\7A\2\2\u019a\u019c\5B\"\2\u019b"+
-		"\u0199\3\2\2\2\u019c\u019f\3\2\2\2\u019d\u019b\3\2\2\2\u019d\u019e\3\2"+
-		"\2\2\u019eE\3\2\2\2\u019f\u019d\3\2\2\2\u01a0\u01a1\7\17\2\2\u01a1\u01a4"+
-		"\7T\2\2\u01a2\u01a3\7%\2\2\u01a3\u01a5\5\u009cO\2\u01a4\u01a2\3\2\2\2"+
-		"\u01a4\u01a5\3\2\2\2\u01a5\u01a6\3\2\2\2\u01a6\u01b3\7\13\2\2\u01a7\u01a9"+
-		"\5V,\2\u01a8\u01a7\3\2\2\2\u01a9\u01ac\3\2\2\2\u01aa\u01a8\3\2\2\2\u01aa"+
-		"\u01ab\3\2\2\2\u01ab\u01ad\3\2\2\2\u01ac\u01aa\3\2\2\2\u01ad\u01ae\7\35"+
-		"\2\2\u01ae\u01af\5`\61\2\u01af\u01b0\5\\/\2\u01b0\u01b1\7\13\2\2\u01b1"+
-		"\u01b3\3\2\2\2\u01b2\u01a0\3\2\2\2\u01b2\u01aa\3\2\2\2\u01b3G\3\2\2\2"+
-		"\u01b4\u01b5\7T\2\2\u01b5I\3\2\2\2\u01b6\u01b8\5P)\2\u01b7\u01b6\3\2\2"+
-		"\2\u01b7\u01b8\3\2\2\2\u01b8\u01b9\3\2\2\2\u01b9\u01ba\7\27\2\2\u01ba"+
-		"\u01bd\5H%\2\u01bb\u01bc\7\30\2\2\u01bc\u01be\5H%\2\u01bd\u01bb\3\2\2"+
-		"\2\u01bd\u01be\3\2\2\2\u01be\u01c0\3\2\2\2\u01bf\u01c1\5L\'\2\u01c0\u01bf"+
-		"\3\2\2\2\u01c0\u01c1\3\2\2\2\u01c1\u01c2\3\2\2\2\u01c2\u01c6\7>\2\2\u01c3"+
-		"\u01c5\5N(\2\u01c4\u01c3\3\2\2\2\u01c5\u01c8\3\2\2\2\u01c6\u01c4\3\2\2"+
-		"\2\u01c6\u01c7\3\2\2\2\u01c7\u01c9\3\2\2\2\u01c8\u01c6\3\2\2\2\u01c9\u01ca"+
-		"\7?\2\2\u01caK\3\2\2\2\u01cb\u01cc\7\25\2\2\u01cc\u01d1\5B\"\2\u01cd\u01ce"+
-		"\7A\2\2\u01ce\u01d0\5B\"\2\u01cf\u01cd\3\2\2\2\u01d0\u01d3\3\2\2\2\u01d1"+
-		"\u01cf\3\2\2\2\u01d1\u01d2\3\2\2\2\u01d2M\3\2\2\2\u01d3\u01d1\3\2\2\2"+
-		"\u01d4\u01d6\5V,\2\u01d5\u01d4\3\2\2\2\u01d6\u01d9\3\2\2\2\u01d7\u01d5"+
-		"\3\2\2\2\u01d7\u01d8\3\2\2\2\u01d8\u01da\3\2\2\2\u01d9\u01d7\3\2\2\2\u01da"+
-		"\u01db\7\35\2\2\u01db\u01dc\5`\61\2\u01dc\u01df\5\\/\2\u01dd\u01e0\5>"+
-		" \2\u01de\u01e0\7\13\2\2\u01df\u01dd\3\2\2\2\u01df\u01de\3\2\2\2\u01e0"+
-		"\u01f1\3\2\2\2\u01e1\u01e2\5R*\2\u01e2\u01e3\7\13\2\2\u01e3\u01f1\3\2"+
-		"\2\2\u01e4\u01e6\7\26\2\2\u01e5\u01e4\3\2\2\2\u01e5\u01e6\3\2\2\2\u01e6"+
-		"\u01ea\3\2\2\2\u01e7\u01e9\5V,\2\u01e8\u01e7\3\2\2\2\u01e9\u01ec\3\2\2"+
-		"\2\u01ea\u01e8\3\2\2\2\u01ea\u01eb\3\2\2\2\u01eb\u01ed\3\2\2\2\u01ec\u01ea"+
-		"\3\2\2\2\u01ed\u01ee\5T+\2\u01ee\u01ef\7\13\2\2\u01ef\u01f1\3\2\2\2\u01f0"+
-		"\u01d7\3\2\2\2\u01f0\u01e1\3\2\2\2\u01f0\u01e5\3\2\2\2\u01f1O\3\2\2\2"+
-		"\u01f2\u01f3\7C\2\2\u01f3Q\3\2\2\2\u01f4\u01f5\7\17\2\2\u01f5\u01f6\5"+
-		"\66\34\2\u01f6\u01f7\7%\2\2\u01f7\u01f8\5\u009cO\2\u01f8S\3\2\2\2\u01f9"+
-		"\u01fc\5X-\2\u01fa\u01fb\7%\2\2\u01fb\u01fd\5\u009cO\2\u01fc\u01fa\3\2"+
-		"\2\2\u01fc\u01fd\3\2\2\2\u01fdU\3\2\2\2\u01fe\u01ff\t\2\2\2\u01ffW\3\2"+
-		"\2\2\u0200\u0201\7\63\2\2\u0201\u0202\5\66\34\2\u0202Y\3\2\2\2\u0203\u0204"+
-		"\7\35\2\2\u0204\u0205\5`\61\2\u0205\u0206\5\\/\2\u0206\u0207\5> \2\u0207"+
-		"[\3\2\2\2\u0208\u0211\7:\2\2\u0209\u020e\5d\63\2\u020a\u020b\7A\2\2\u020b"+
-		"\u020d\5d\63\2\u020c\u020a\3\2\2\2\u020d\u0210\3\2\2\2\u020e\u020c\3\2"+
-		"\2\2\u020e\u020f\3\2\2\2\u020f\u0212\3\2\2\2\u0210\u020e\3\2\2\2\u0211"+
-		"\u0209\3\2\2\2\u0211\u0212\3\2\2\2\u0212\u0213\3\2\2\2\u0213\u0214\7;"+
-		"\2\2\u0214]\3\2\2\2\u0215\u0216\5`\61\2\u0216\u0217\5b\62\2\u0217_\3\2"+
-		"\2\2\u0218\u0219\7T\2\2\u0219a\3\2\2\2\u021a\u021c\7:\2\2\u021b\u021a"+
-		"\3\2\2\2\u021b\u021c\3\2\2\2\u021c\u021e\3\2\2\2\u021d\u021f\5h\65\2\u021e"+
-		"\u021d\3\2\2\2\u021e\u021f\3\2\2\2\u021f\u0221\3\2\2\2\u0220\u0222\7;"+
-		"\2\2\u0221\u0220\3\2\2\2\u0221\u0222\3\2\2\2\u0222c\3\2\2\2\u0223\u0226"+
-		"\5f\64\2\u0224\u0225\7%\2\2\u0225\u0227\5\u009cO\2\u0226\u0224\3\2\2\2"+
-		"\u0226\u0227\3\2\2\2\u0227e\3\2\2\2\u0228\u0229\7\63\2\2\u0229\u022e\7"+
-		"T\2\2\u022a\u022b\7(\2\2\u022b\u022c\7\63\2\2\u022c\u022e\7T\2\2\u022d"+
-		"\u0228\3\2\2\2\u022d\u022a\3\2\2\2\u022eg\3\2\2\2\u022f\u0234\5j\66\2"+
-		"\u0230\u0231\7A\2\2\u0231\u0233\5j\66\2\u0232\u0230\3\2\2\2\u0233\u0236"+
-		"\3\2\2\2\u0234\u0232\3\2\2\2\u0234\u0235\3\2\2\2\u0235i\3\2\2\2\u0236"+
-		"\u0234\3\2\2\2\u0237\u0238\5l\67\2\u0238k\3\2\2\2\u0239\u023e\5n8\2\u023a"+
-		"\u023b\7\20\2\2\u023b\u023d\5n8\2\u023c\u023a\3\2\2\2\u023d\u0240\3\2"+
-		"\2\2\u023e\u023c\3\2\2\2\u023e\u023f\3\2\2\2\u023fm\3\2\2\2\u0240\u023e"+
-		"\3\2\2\2\u0241\u0246\5p9\2\u0242\u0243\7\21\2\2\u0243\u0245\5p9\2\u0244"+
-		"\u0242\3\2\2\2\u0245\u0248\3\2\2\2\u0246\u0244\3\2\2\2\u0246\u0247\3\2"+
-		"\2\2\u0247o\3\2\2\2\u0248\u0246\3\2\2\2\u0249\u024e\5r:\2\u024a\u024b"+
-		"\7\r\2\2\u024b\u024d\5r:\2\u024c\u024a\3\2\2\2\u024d\u0250\3\2\2\2\u024e"+
-		"\u024c\3\2\2\2\u024e\u024f\3\2\2\2\u024fq\3\2\2\2\u0250\u024e\3\2\2\2"+
-		"\u0251\u0252\5t;\2\u0252\u0253\t\3\2\2\u0253\u0254\5r:\2\u0254\u0257\3"+
-		"\2\2\2\u0255\u0257\5v<\2\u0256\u0251\3\2\2\2\u0256\u0255\3\2\2\2\u0257"+
-		"s\3\2\2\2\u0258\u0259\7\16\2\2\u0259\u025a\7:\2\2\u025a\u025f\58\35\2"+
-		"\u025b\u025c\7A\2\2\u025c\u025e\58\35\2\u025d\u025b\3\2\2\2\u025e\u0261"+
-		"\3\2\2\2\u025f\u025d\3\2\2\2\u025f\u0260\3\2\2\2\u0260\u0262\3\2\2\2\u0261"+
-		"\u025f\3\2\2\2\u0262\u0263\7;\2\2\u0263\u0266\3\2\2\2\u0264\u0266\58\35"+
-		"\2\u0265\u0258\3\2\2\2\u0265\u0264\3\2\2\2\u0266u\3\2\2\2\u0267\u0268"+
-		"\5x=\2\u0268\u0269\79\2\2\u0269\u026a\5j\66\2\u026a\u026b\7B\2\2\u026b"+
-		"\u026c\5j\66\2\u026c\u026f\3\2\2\2\u026d\u026f\5x=\2\u026e\u0267\3\2\2"+
-		"\2\u026e\u026d\3\2\2\2\u026fw\3\2\2\2\u0270\u0275\5z>\2\u0271\u0272\7"+
-		"\66\2\2\u0272\u0274\5z>\2\u0273\u0271\3\2\2\2\u0274\u0277\3\2\2\2\u0275"+
-		"\u0273\3\2\2\2\u0275\u0276\3\2\2\2\u0276y\3\2\2\2\u0277\u0275\3\2\2\2"+
-		"\u0278\u027d\5|?\2\u0279\u027a\7\67\2\2\u027a\u027c\5|?\2\u027b\u0279"+
-		"\3\2\2\2\u027c\u027f\3\2\2\2\u027d\u027b\3\2\2\2\u027d\u027e\3\2\2\2\u027e"+
-		"{\3\2\2\2\u027f\u027d\3\2\2\2\u0280\u0285\5~@\2\u0281\u0282\7)\2\2\u0282"+
-		"\u0284\5~@\2\u0283\u0281\3\2\2\2\u0284\u0287\3\2\2\2\u0285\u0283\3\2\2"+
-		"\2\u0285\u0286\3\2\2\2\u0286}\3\2\2\2\u0287\u0285\3\2\2\2\u0288\u028d"+
-		"\5\u0080A\2\u0289\u028a\7(\2\2\u028a\u028c\5\u0080A\2\u028b\u0289\3\2"+
-		"\2\2\u028c\u028f\3\2\2\2\u028d\u028b\3\2\2\2\u028d\u028e\3\2\2\2\u028e"+
-		"\177\3\2\2\2\u028f\u028d\3\2\2\2\u0290\u0293\5\u0082B\2\u0291\u0292\7"+
-		"V\2\2\u0292\u0294\5\u0082B\2\u0293\u0291\3\2\2\2\u0293\u0294\3\2\2\2\u0294"+
-		"\u0081\3\2\2\2\u0295\u0298\5\u0084C\2\u0296\u0297\7W\2\2\u0297\u0299\5"+
-		"\u0084C\2\u0298\u0296\3\2\2\2\u0298\u0299\3\2\2\2\u0299\u0083\3\2\2\2"+
-		"\u029a\u029f\5\u0086D\2\u029b\u029c\7X\2\2\u029c\u029e\5\u0086D\2\u029d"+
-		"\u029b\3\2\2\2\u029e\u02a1\3\2\2\2\u029f\u029d\3\2\2\2\u029f\u02a0\3\2"+
-		"\2\2\u02a0\u0085\3\2\2\2\u02a1\u029f\3\2\2\2\u02a2\u02a7\5\u0088E\2\u02a3"+
-		"\u02a4\t\4\2\2\u02a4\u02a6\5\u0088E\2\u02a5\u02a3\3\2\2\2\u02a6\u02a9"+
-		"\3\2\2\2\u02a7\u02a5\3\2\2\2\u02a7\u02a8\3\2\2\2\u02a8\u0087\3\2\2\2\u02a9"+
-		"\u02a7\3\2\2\2\u02aa\u02af\5\u008aF\2\u02ab\u02ac\t\5\2\2\u02ac\u02ae"+
-		"\5\u008aF\2\u02ad\u02ab\3\2\2\2\u02ae\u02b1\3\2\2\2\u02af\u02ad\3\2\2"+
-		"\2\u02af\u02b0\3\2\2\2\u02b0\u0089\3\2\2\2\u02b1\u02af\3\2\2\2\u02b2\u02b3"+
-		"\7*\2\2\u02b3\u02b6\5\u008aF\2\u02b4\u02b6\5\u008cG\2\u02b5\u02b2\3\2"+
-		"\2\2\u02b5\u02b4\3\2\2\2\u02b6\u008b\3\2\2\2\u02b7\u02ba\5\u008eH\2\u02b8"+
-		"\u02b9\7\f\2\2\u02b9\u02bb\5\u008eH\2\u02ba\u02b8\3\2\2\2\u02ba\u02bb"+
-		"\3\2\2\2\u02bb\u008d\3\2\2\2\u02bc\u02bd\t\6\2\2\u02bd\u02c8\5\u0090I"+
-		"\2\u02be\u02bf\7:\2\2\u02bf\u02c0\7I\2\2\u02c0\u02c1\7;\2\2\u02c1\u02c8"+
-		"\5\u0090I\2\u02c2\u02c3\7:\2\2\u02c3\u02c4\5p9\2\u02c4\u02c5\7;\2\2\u02c5"+
-		"\u02c8\3\2\2\2\u02c6\u02c8\5\u0090I\2\u02c7\u02bc\3\2\2\2\u02c7\u02be"+
-		"\3\2\2\2\u02c7\u02c2\3\2\2\2\u02c7\u02c6\3\2\2\2\u02c8\u008f\3\2\2\2\u02c9"+
-		"\u02ca\7Y\2\2\u02ca\u02d0\58\35\2\u02cb\u02cc\58\35\2\u02cc\u02cd\7Y\2"+
-		"\2\u02cd\u02d0\3\2\2\2\u02ce\u02d0\5\u0092J\2\u02cf\u02c9\3\2\2\2\u02cf"+
-		"\u02cb\3\2\2\2\u02cf\u02ce\3\2\2\2\u02d0\u0091\3\2\2\2\u02d1\u02d2\7&"+
-		"\2\2\u02d2\u02d7\58\35\2\u02d3\u02d4\7\'\2\2\u02d4\u02d7\58\35\2\u02d5"+
-		"\u02d7\5\u0094K\2\u02d6\u02d1\3\2\2\2\u02d6\u02d3\3\2\2\2\u02d6\u02d5"+
-		"\3\2\2\2\u02d7\u0093\3\2\2\2\u02d8\u02db\5\u009cO\2\u02d9\u02db\5\u009e"+
-		"P\2\u02da\u02d8\3\2\2\2\u02da\u02d9\3\2\2\2\u02db\u0095\3\2\2\2\u02dc"+
-		"\u02dd\7G\2\2\u02dd\u02e6\7:\2\2\u02de\u02e3\5\u0098M\2\u02df\u02e0\7"+
-		"A\2\2\u02e0\u02e2\5\u0098M\2\u02e1\u02df\3\2\2\2\u02e2\u02e5\3\2\2\2\u02e3"+
-		"\u02e1\3\2\2\2\u02e3\u02e4\3\2\2\2\u02e4\u02e7\3\2\2\2\u02e5\u02e3\3\2"+
-		"\2\2\u02e6\u02de\3\2\2\2\u02e6\u02e7\3\2\2\2\u02e7\u02e8\3\2\2\2\u02e8"+
-		"\u02e9\7;\2\2\u02e9\u0097\3\2\2\2\u02ea\u02ed\5\u009aN\2\u02eb\u02ed\5"+
-		"j\66\2\u02ec\u02ea\3\2\2\2\u02ec\u02eb\3\2\2\2\u02ed\u0099\3\2\2\2\u02ee"+
-		"\u02ef\5j\66\2\u02ef\u02f0\7\65\2\2\u02f0\u02f1\5j\66\2\u02f1\u009b\3"+
-		"\2\2\2\u02f2\u02f8\5\u00a2R\2\u02f3\u02f8\5\u00a8U\2\u02f4\u02f8\5\u00a0"+
-		"Q\2\u02f5\u02f8\5\u0096L\2\u02f6\u02f8\5^\60\2\u02f7\u02f2\3\2\2\2\u02f7"+
-		"\u02f3\3\2\2\2\u02f7\u02f4\3\2\2\2\u02f7\u02f5\3\2\2\2\u02f7\u02f6\3\2"+
-		"\2\2\u02f8\u009d\3\2\2\2\u02f9\u02fa\7(\2\2\u02fa\u02fd\58\35\2\u02fb"+
-		"\u02fd\58\35\2\u02fc\u02f9\3\2\2\2\u02fc\u02fb\3\2\2\2\u02fd\u009f\3\2"+
-		"\2\2\u02fe\u02ff\7P\2\2\u02ff\u00a1\3\2\2\2\u0300\u0303\5\u00a4S\2\u0301"+
-		"\u0303\5\u00a6T\2\u0302\u0300\3\2\2\2\u0302\u0301\3\2\2\2\u0303\u00a3"+
-		"\3\2\2\2\u0304\u0305\t\7\2\2\u0305\u00a5\3\2\2\2\u0306\u030b\7N\2\2\u0307"+
-		"\u0308\7\t\2\2\u0308\u030a\t\b\2\2\u0309\u0307\3\2\2\2\u030a\u030d\3\2"+
-		"\2\2\u030b\u0309\3\2\2\2\u030b\u030c\3\2\2\2\u030c\u00a7\3\2\2\2\u030d"+
-		"\u030b\3\2\2\2\u030e\u030f\t\t\2\2\u030f\u00a9\3\2\2\2P\u00ac\u00ae\u00b2"+
-		"\u00b7\u00bf\u00c3\u00d5\u00de\u00f6\u00fb\u0108\u0124\u012c\u0130\u0138"+
-		"\u013c\u0140\u0148\u0153\u015b\u0167\u016e\u017b\u0182\u018a\u0190\u019d"+
-		"\u01a4\u01aa\u01b2\u01b7\u01bd\u01c0\u01c6\u01d1\u01d7\u01df\u01e5\u01ea"+
-		"\u01f0\u01fc\u020e\u0211\u021b\u021e\u0221\u0226\u022d\u0234\u023e\u0246"+
-		"\u024e\u0256\u025f\u0265\u026e\u0275\u027d\u0285\u028d\u0293\u0298\u029f"+
-		"\u02a7\u02af\u02b5\u02ba\u02c7\u02cf\u02d6\u02da\u02e3\u02e6\u02ec\u02f7"+
-		"\u02fc\u0302\u030b";
+		"\3\2\3\2\7\2\u00ab\n\2\f\2\16\2\u00ae\13\2\3\3\5\3\u00b1\n\3\3\3\6\3\u00b4"+
+		"\n\3\r\3\16\3\u00b5\3\4\3\4\3\5\3\5\7\5\u00bc\n\5\f\5\16\5\u00bf\13\5"+
+		"\3\5\5\5\u00c2\n\5\3\6\3\6\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b"+
+		"\3\b\3\b\5\b\u00d3\n\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u00dc\n\t\3\n\3"+
+		"\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
+		"\3\13\3\13\3\13\7\13\u00f2\n\13\f\13\16\13\u00f5\13\13\3\13\3\13\5\13"+
+		"\u00f9\n\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\5\r\u0106\n\r"+
+		"\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3"+
+		"\17\3\17\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\5\20\u0122"+
+		"\n\20\3\21\3\21\3\21\3\21\7\21\u0128\n\21\f\21\16\21\u012b\13\21\3\22"+
+		"\5\22\u012e\n\22\3\22\3\22\3\22\3\22\3\23\3\23\5\23\u0136\n\23\3\24\3"+
+		"\24\5\24\u013a\n\24\3\25\3\25\5\25\u013e\n\25\3\26\3\26\3\26\3\27\7\27"+
+		"\u0144\n\27\f\27\16\27\u0147\13\27\3\27\3\27\3\30\3\30\3\30\3\30\7\30"+
+		"\u014f\n\30\f\30\16\30\u0152\13\30\3\31\3\31\3\31\7\31\u0157\n\31\f\31"+
+		"\16\31\u015a\13\31\3\32\3\32\3\32\3\32\3\32\3\32\3\32\5\32\u0163\n\32"+
+		"\3\33\3\33\3\34\3\34\3\34\5\34\u016a\n\34\3\35\3\35\3\35\3\35\3\36\3\36"+
+		"\3\36\3\36\3\36\7\36\u0175\n\36\f\36\16\36\u0178\13\36\3\37\3\37\7\37"+
+		"\u017c\n\37\f\37\16\37\u017f\13\37\3\37\3\37\3 \3 \3 \5 \u0186\n \3 \3"+
+		" \7 \u018a\n \f \16 \u018d\13 \3 \3 \3!\3!\3\"\3\"\3\"\3\"\7\"\u0197\n"+
+		"\"\f\"\16\"\u019a\13\"\3#\3#\3#\3#\5#\u01a0\n#\3#\3#\7#\u01a4\n#\f#\16"+
+		"#\u01a7\13#\3#\3#\3#\3#\3#\5#\u01ae\n#\3$\3$\3%\5%\u01b3\n%\3%\3%\3%\3"+
+		"%\5%\u01b9\n%\3%\5%\u01bc\n%\3%\3%\7%\u01c0\n%\f%\16%\u01c3\13%\3%\3%"+
+		"\3&\3&\3&\3&\7&\u01cb\n&\f&\16&\u01ce\13&\3\'\7\'\u01d1\n\'\f\'\16\'\u01d4"+
+		"\13\'\3\'\3\'\3\'\3\'\3\'\5\'\u01db\n\'\3\'\3\'\3\'\3\'\5\'\u01e1\n\'"+
+		"\3\'\7\'\u01e4\n\'\f\'\16\'\u01e7\13\'\3\'\3\'\3\'\5\'\u01ec\n\'\3(\3"+
+		"(\3)\3)\3)\3)\3)\3*\3*\3*\5*\u01f8\n*\3+\3+\3,\3,\3,\3-\3-\3-\3-\3-\3"+
+		".\3.\3.\3.\7.\u0208\n.\f.\16.\u020b\13.\5.\u020d\n.\3.\3.\3/\3/\3/\3\60"+
+		"\3\60\3\61\5\61\u0217\n\61\3\61\5\61\u021a\n\61\3\61\5\61\u021d\n\61\3"+
+		"\62\3\62\3\62\5\62\u0222\n\62\3\63\3\63\3\63\3\63\3\63\5\63\u0229\n\63"+
+		"\3\64\3\64\3\64\7\64\u022e\n\64\f\64\16\64\u0231\13\64\3\65\3\65\3\66"+
+		"\3\66\3\66\7\66\u0238\n\66\f\66\16\66\u023b\13\66\3\67\3\67\3\67\7\67"+
+		"\u0240\n\67\f\67\16\67\u0243\13\67\38\38\38\78\u0248\n8\f8\168\u024b\13"+
+		"8\39\39\39\39\39\59\u0252\n9\3:\3:\3:\3:\3:\7:\u0259\n:\f:\16:\u025c\13"+
+		":\3:\3:\3:\5:\u0261\n:\3;\3;\3;\3;\3;\3;\3;\5;\u026a\n;\3<\3<\3<\7<\u026f"+
+		"\n<\f<\16<\u0272\13<\3=\3=\3=\7=\u0277\n=\f=\16=\u027a\13=\3>\3>\3>\7"+
+		">\u027f\n>\f>\16>\u0282\13>\3?\3?\3?\7?\u0287\n?\f?\16?\u028a\13?\3@\3"+
+		"@\3@\5@\u028f\n@\3A\3A\3A\5A\u0294\nA\3B\3B\3B\7B\u0299\nB\fB\16B\u029c"+
+		"\13B\3C\3C\3C\7C\u02a1\nC\fC\16C\u02a4\13C\3D\3D\3D\7D\u02a9\nD\fD\16"+
+		"D\u02ac\13D\3E\3E\3E\5E\u02b1\nE\3F\3F\3F\5F\u02b6\nF\3G\3G\3G\3G\3G\3"+
+		"G\3G\3G\3G\3G\3G\5G\u02c3\nG\3H\3H\3H\3H\3H\3H\5H\u02cb\nH\3I\3I\3I\3"+
+		"I\3I\5I\u02d2\nI\3J\3J\5J\u02d6\nJ\3K\3K\3K\3K\3K\7K\u02dd\nK\fK\16K\u02e0"+
+		"\13K\5K\u02e2\nK\3K\3K\3L\3L\5L\u02e8\nL\3M\3M\3M\3M\3N\3N\3N\3N\3N\5"+
+		"N\u02f3\nN\3O\3O\3O\5O\u02f8\nO\3P\3P\3Q\3Q\5Q\u02fe\nQ\3R\3R\3S\3S\3"+
+		"S\7S\u0305\nS\fS\16S\u0308\13S\3T\3T\3T\2U\2\4\6\b\n\f\16\20\22\24\26"+
+		"\30\32\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|"+
+		"~\u0080\u0082\u0084\u0086\u0088\u008a\u008c\u008e\u0090\u0092\u0094\u0096"+
+		"\u0098\u009a\u009c\u009e\u00a0\u00a2\u00a4\u00a6\2\n\4\2EFJJ\4\2\'\'U"+
+		"U\4\2-.\66\66\3\2/\61\5\2..\62\62\64\64\3\2KM\4\2KKNN\4\2QQSS\u031d\2"+
+		"\u00ac\3\2\2\2\4\u00b0\3\2\2\2\6\u00b7\3\2\2\2\b\u00b9\3\2\2\2\n\u00c3"+
+		"\3\2\2\2\f\u00c5\3\2\2\2\16\u00d2\3\2\2\2\20\u00db\3\2\2\2\22\u00dd\3"+
+		"\2\2\2\24\u00e7\3\2\2\2\26\u00fa\3\2\2\2\30\u0102\3\2\2\2\32\u010a\3\2"+
+		"\2\2\34\u0112\3\2\2\2\36\u0121\3\2\2\2 \u0123\3\2\2\2\"\u012d\3\2\2\2"+
+		"$\u0133\3\2\2\2&\u0137\3\2\2\2(\u013b\3\2\2\2*\u013f\3\2\2\2,\u0145\3"+
+		"\2\2\2.\u014a\3\2\2\2\60\u0153\3\2\2\2\62\u0162\3\2\2\2\64\u0164\3\2\2"+
+		"\2\66\u0169\3\2\2\28\u016b\3\2\2\2:\u016f\3\2\2\2<\u0179\3\2\2\2>\u0182"+
+		"\3\2\2\2@\u0190\3\2\2\2B\u0192\3\2\2\2D\u01ad\3\2\2\2F\u01af\3\2\2\2H"+
+		"\u01b2\3\2\2\2J\u01c6\3\2\2\2L\u01eb\3\2\2\2N\u01ed\3\2\2\2P\u01ef\3\2"+
+		"\2\2R\u01f4\3\2\2\2T\u01f9\3\2\2\2V\u01fb\3\2\2\2X\u01fe\3\2\2\2Z\u0203"+
+		"\3\2\2\2\\\u0210\3\2\2\2^\u0213\3\2\2\2`\u0216\3\2\2\2b\u021e\3\2\2\2"+
+		"d\u0228\3\2\2\2f\u022a\3\2\2\2h\u0232\3\2\2\2j\u0234\3\2\2\2l\u023c\3"+
+		"\2\2\2n\u0244\3\2\2\2p\u0251\3\2\2\2r\u0260\3\2\2\2t\u0269\3\2\2\2v\u026b"+
+		"\3\2\2\2x\u0273\3\2\2\2z\u027b\3\2\2\2|\u0283\3\2\2\2~\u028b\3\2\2\2\u0080"+
+		"\u0290\3\2\2\2\u0082\u0295\3\2\2\2\u0084\u029d\3\2\2\2\u0086\u02a5\3\2"+
+		"\2\2\u0088\u02b0\3\2\2\2\u008a\u02b2\3\2\2\2\u008c\u02c2\3\2\2\2\u008e"+
+		"\u02ca\3\2\2\2\u0090\u02d1\3\2\2\2\u0092\u02d5\3\2\2\2\u0094\u02d7\3\2"+
+		"\2\2\u0096\u02e7\3\2\2\2\u0098\u02e9\3\2\2\2\u009a\u02f2\3\2\2\2\u009c"+
+		"\u02f7\3\2\2\2\u009e\u02f9\3\2\2\2\u00a0\u02fd\3\2\2\2\u00a2\u02ff\3\2"+
+		"\2\2\u00a4\u0301\3\2\2\2\u00a6\u0309\3\2\2\2\u00a8\u00ab\5\b\5\2\u00a9"+
+		"\u00ab\5\4\3\2\u00aa\u00a8\3\2\2\2\u00aa\u00a9\3\2\2\2\u00ab\u00ae\3\2"+
+		"\2\2\u00ac\u00aa\3\2\2\2\u00ac\u00ad\3\2\2\2\u00ad\3\3\2\2\2\u00ae\u00ac"+
+		"\3\2\2\2\u00af\u00b1\7\4\2\2\u00b0\u00af\3\2\2\2\u00b0\u00b1\3\2\2\2\u00b1"+
+		"\u00b3\3\2\2\2\u00b2\u00b4\5\6\4\2\u00b3\u00b2\3\2\2\2\u00b4\u00b5\3\2"+
+		"\2\2\u00b5\u00b3\3\2\2\2\u00b5\u00b6\3\2\2\2\u00b6\5\3\2\2\2\u00b7\u00b8"+
+		"\7\5\2\2\u00b8\7\3\2\2\2\u00b9\u00bd\5\n\6\2\u00ba\u00bc\5\16\b\2\u00bb"+
+		"\u00ba\3\2\2\2\u00bc\u00bf\3\2\2\2\u00bd\u00bb\3\2\2\2\u00bd\u00be\3\2"+
+		"\2\2\u00be\u00c1\3\2\2\2\u00bf\u00bd\3\2\2\2\u00c0\u00c2\5\f\7\2\u00c1"+
+		"\u00c0\3\2\2\2\u00c1\u00c2\3\2\2\2\u00c2\t\3\2\2\2\u00c3\u00c4\7\3\2\2"+
+		"\u00c4\13\3\2\2\2\u00c5\u00c6\7\7\2\2\u00c6\r\3\2\2\2\u00c7\u00c8\7@\2"+
+		"\2\u00c8\u00c9\5\16\b\2\u00c9\u00ca\7A\2\2\u00ca\u00d3\3\2\2\2\u00cb\u00d3"+
+		"\5<\37\2\u00cc\u00d3\5H%\2\u00cd\u00d3\5> \2\u00ce\u00d3\5\20\t\2\u00cf"+
+		"\u00d0\5\36\20\2\u00d0\u00d1\7\r\2\2\u00d1\u00d3\3\2\2\2\u00d2\u00c7\3"+
+		"\2\2\2\u00d2\u00cb\3\2\2\2\u00d2\u00cc\3\2\2\2\u00d2\u00cd\3\2\2\2\u00d2"+
+		"\u00ce\3\2\2\2\u00d2\u00cf\3\2\2\2\u00d3\17\3\2\2\2\u00d4\u00dc\5\24\13"+
+		"\2\u00d5\u00dc\5\22\n\2\u00d6\u00dc\5\26\f\2\u00d7\u00dc\5\30\r\2\u00d8"+
+		"\u00dc\5\32\16\2\u00d9\u00dc\5\34\17\2\u00da\u00dc\5X-\2\u00db\u00d4\3"+
+		"\2\2\2\u00db\u00d5\3\2\2\2\u00db\u00d6\3\2\2\2\u00db\u00d7\3\2\2\2\u00db"+
+		"\u00d8\3\2\2\2\u00db\u00d9\3\2\2\2\u00db\u00da\3\2\2\2\u00dc\21\3\2\2"+
+		"\2\u00dd\u00de\7$\2\2\u00de\u00df\7<\2\2\u00df\u00e0\5h\65\2\u00e0\u00e1"+
+		"\7\r\2\2\u00e1\u00e2\5h\65\2\u00e2\u00e3\7\r\2\2\u00e3\u00e4\5h\65\2\u00e4"+
+		"\u00e5\7=\2\2\u00e5\u00e6\5\16\b\2\u00e6\23\3\2\2\2\u00e7\u00e8\7!\2\2"+
+		"\u00e8\u00e9\7<\2\2\u00e9\u00ea\5h\65\2\u00ea\u00eb\7=\2\2\u00eb\u00f3"+
+		"\5\16\b\2\u00ec\u00ed\7#\2\2\u00ed\u00ee\7<\2\2\u00ee\u00ef\5h\65\2\u00ef"+
+		"\u00f0\7=\2\2\u00f0\u00f2\3\2\2\2\u00f1\u00ec\3\2\2\2\u00f2\u00f5\3\2"+
+		"\2\2\u00f3\u00f1\3\2\2\2\u00f3\u00f4\3\2\2\2\u00f4\u00f8\3\2\2\2\u00f5"+
+		"\u00f3\3\2\2\2\u00f6\u00f7\7\"\2\2\u00f7\u00f9\5\16\b\2\u00f8\u00f6\3"+
+		"\2\2\2\u00f8\u00f9\3\2\2\2\u00f9\25\3\2\2\2\u00fa\u00fb\7%\2\2\u00fb\u00fc"+
+		"\7<\2\2\u00fc\u00fd\5\62\32\2\u00fd\u00fe\7\f\2\2\u00fe\u00ff\5\u0096"+
+		"L\2\u00ff\u0100\7=\2\2\u0100\u0101\5\16\b\2\u0101\27\3\2\2\2\u0102\u0103"+
+		"\7&\2\2\u0103\u0105\7<\2\2\u0104\u0106\5h\65\2\u0105\u0104\3\2\2\2\u0105"+
+		"\u0106\3\2\2\2\u0106\u0107\3\2\2\2\u0107\u0108\7=\2\2\u0108\u0109\5\16"+
+		"\b\2\u0109\31\3\2\2\2\u010a\u010b\7\33\2\2\u010b\u010c\5\16\b\2\u010c"+
+		"\u010d\7&\2\2\u010d\u010e\7<\2\2\u010e\u010f\5h\65\2\u010f\u0110\7=\2"+
+		"\2\u0110\u0111\7\r\2\2\u0111\33\3\2\2\2\u0112\u0113\7\34\2\2\u0113\u0114"+
+		"\7<\2\2\u0114\u0115\5h\65\2\u0115\u0116\7=\2\2\u0116\u0117\7@\2\2\u0117"+
+		"\u0118\5,\27\2\u0118\u0119\7A\2\2\u0119\35\3\2\2\2\u011a\u0122\5 \21\2"+
+		"\u011b\u0122\5\"\22\2\u011c\u0122\5$\23\2\u011d\u0122\5&\24\2\u011e\u0122"+
+		"\5(\25\2\u011f\u0122\5*\26\2\u0120\u0122\5h\65\2\u0121\u011a\3\2\2\2\u0121"+
+		"\u011b\3\2\2\2\u0121\u011c\3\2\2\2\u0121\u011d\3\2\2\2\u0121\u011e\3\2"+
+		"\2\2\u0121\u011f\3\2\2\2\u0121\u0120\3\2\2\2\u0122\37\3\2\2\2\u0123\u0124"+
+		"\7\24\2\2\u0124\u0129\5\66\34\2\u0125\u0126\7C\2\2\u0126\u0128\5\66\34"+
+		"\2\u0127\u0125\3\2\2\2\u0128\u012b\3\2\2\2\u0129\u0127\3\2\2\2\u0129\u012a"+
+		"\3\2\2\2\u012a!\3\2\2\2\u012b\u0129\3\2\2\2\u012c\u012e\7F\2\2\u012d\u012c"+
+		"\3\2\2\2\u012d\u012e\3\2\2\2\u012e\u012f\3\2\2\2\u012f\u0130\5\62\32\2"+
+		"\u0130\u0131\7\'\2\2\u0131\u0132\5h\65\2\u0132#\3\2\2\2\u0133\u0135\7"+
+		" \2\2\u0134\u0136\7K\2\2\u0135\u0134\3\2\2\2\u0135\u0136\3\2\2\2\u0136"+
+		"%\3\2\2\2\u0137\u0139\7\25\2\2\u0138\u013a\7K\2\2\u0139\u0138\3\2\2\2"+
+		"\u0139\u013a\3\2\2\2\u013a\'\3\2\2\2\u013b\u013d\7\26\2\2\u013c\u013e"+
+		"\5h\65\2\u013d\u013c\3\2\2\2\u013d\u013e\3\2\2\2\u013e)\3\2\2\2\u013f"+
+		"\u0140\7H\2\2\u0140\u0141\5h\65\2\u0141+\3\2\2\2\u0142\u0144\5.\30\2\u0143"+
+		"\u0142\3\2\2\2\u0144\u0147\3\2\2\2\u0145\u0143\3\2\2\2\u0145\u0146\3\2"+
+		"\2\2\u0146\u0148\3\2\2\2\u0147\u0145\3\2\2\2\u0148\u0149\5\60\31\2\u0149"+
+		"-\3\2\2\2\u014a\u014b\7\35\2\2\u014b\u014c\5h\65\2\u014c\u0150\7D\2\2"+
+		"\u014d\u014f\5\16\b\2\u014e\u014d\3\2\2\2\u014f\u0152\3\2\2\2\u0150\u014e"+
+		"\3\2\2\2\u0150\u0151\3\2\2\2\u0151/\3\2\2\2\u0152\u0150\3\2\2\2\u0153"+
+		"\u0154\7\36\2\2\u0154\u0158\7D\2\2\u0155\u0157\5\16\b\2\u0156\u0155\3"+
+		"\2\2\2\u0157\u015a\3\2\2\2\u0158\u0156\3\2\2\2\u0158\u0159\3\2\2\2\u0159"+
+		"\61\3\2\2\2\u015a\u0158\3\2\2\2\u015b\u015c\7\65\2\2\u015c\u0163\5\64"+
+		"\33\2\u015d\u015e\7\65\2\2\u015e\u015f\5\64\33\2\u015f\u0160\7\63\2\2"+
+		"\u0160\u0161\5\64\33\2\u0161\u0163\3\2\2\2\u0162\u015b\3\2\2\2\u0162\u015d"+
+		"\3\2\2\2\u0163\63\3\2\2\2\u0164\u0165\7T\2\2\u0165\65\3\2\2\2\u0166\u016a"+
+		"\58\35\2\u0167\u016a\5:\36\2\u0168\u016a\5\62\32\2\u0169\u0166\3\2\2\2"+
+		"\u0169\u0167\3\2\2\2\u0169\u0168\3\2\2\2\u016a\67\3\2\2\2\u016b\u016c"+
+		"\7T\2\2\u016c\u016d\7:\2\2\u016d\u016e\5\62\32\2\u016e9\3\2\2\2\u016f"+
+		"\u0176\5\62\32\2\u0170\u0171\7>\2\2\u0171\u0172\5h\65\2\u0172\u0173\7"+
+		"?\2\2\u0173\u0175\3\2\2\2\u0174\u0170\3\2\2\2\u0175\u0178\3\2\2\2\u0176"+
+		"\u0174\3\2\2\2\u0176\u0177\3\2\2\2\u0177;\3\2\2\2\u0178\u0176\3\2\2\2"+
+		"\u0179\u017d\7@\2\2\u017a\u017c\5\16\b\2\u017b\u017a\3\2\2\2\u017c\u017f"+
+		"\3\2\2\2\u017d\u017b\3\2\2\2\u017d\u017e\3\2\2\2\u017e\u0180\3\2\2\2\u017f"+
+		"\u017d\3\2\2\2\u0180\u0181\7A\2\2\u0181=\3\2\2\2\u0182\u0183\7B\2\2\u0183"+
+		"\u0185\5@!\2\u0184\u0186\5B\"\2\u0185\u0184\3\2\2\2\u0185\u0186\3\2\2"+
+		"\2\u0186\u0187\3\2\2\2\u0187\u018b\7@\2\2\u0188\u018a\5D#\2\u0189\u0188"+
+		"\3\2\2\2\u018a\u018d\3\2\2\2\u018b\u0189\3\2\2\2\u018b\u018c\3\2\2\2\u018c"+
+		"\u018e\3\2\2\2\u018d\u018b\3\2\2\2\u018e\u018f\7A\2\2\u018f?\3\2\2\2\u0190"+
+		"\u0191\7T\2\2\u0191A\3\2\2\2\u0192\u0193\7\32\2\2\u0193\u0198\5@!\2\u0194"+
+		"\u0195\7C\2\2\u0195\u0197\5@!\2\u0196\u0194\3\2\2\2\u0197\u019a\3\2\2"+
+		"\2\u0198\u0196\3\2\2\2\u0198\u0199\3\2\2\2\u0199C\3\2\2\2\u019a\u0198"+
+		"\3\2\2\2\u019b\u019c\7\21\2\2\u019c\u019f\7T\2\2\u019d\u019e\7\'\2\2\u019e"+
+		"\u01a0\5\u009aN\2\u019f\u019d\3\2\2\2\u019f\u01a0\3\2\2\2\u01a0\u01a1"+
+		"\3\2\2\2\u01a1\u01ae\7\r\2\2\u01a2\u01a4\5T+\2\u01a3\u01a2\3\2\2\2\u01a4"+
+		"\u01a7\3\2\2\2\u01a5\u01a3\3\2\2\2\u01a5\u01a6\3\2\2\2\u01a6\u01a8\3\2"+
+		"\2\2\u01a7\u01a5\3\2\2\2\u01a8\u01a9\7\37\2\2\u01a9\u01aa\5^\60\2\u01aa"+
+		"\u01ab\5Z.\2\u01ab\u01ac\7\r\2\2\u01ac\u01ae\3\2\2\2\u01ad\u019b\3\2\2"+
+		"\2\u01ad\u01a5\3\2\2\2\u01aeE\3\2\2\2\u01af\u01b0\7T\2\2\u01b0G\3\2\2"+
+		"\2\u01b1\u01b3\5N(\2\u01b2\u01b1\3\2\2\2\u01b2\u01b3\3\2\2\2\u01b3\u01b4"+
+		"\3\2\2\2\u01b4\u01b5\7\31\2\2\u01b5\u01b8\5F$\2\u01b6\u01b7\7\32\2\2\u01b7"+
+		"\u01b9\5F$\2\u01b8\u01b6\3\2\2\2\u01b8\u01b9\3\2\2\2\u01b9\u01bb\3\2\2"+
+		"\2\u01ba\u01bc\5J&\2\u01bb\u01ba\3\2\2\2\u01bb\u01bc\3\2\2\2\u01bc\u01bd"+
+		"\3\2\2\2\u01bd\u01c1\7@\2\2\u01be\u01c0\5L\'\2\u01bf\u01be\3\2\2\2\u01c0"+
+		"\u01c3\3\2\2\2\u01c1\u01bf\3\2\2\2\u01c1\u01c2\3\2\2\2\u01c2\u01c4\3\2"+
+		"\2\2\u01c3\u01c1\3\2\2\2\u01c4\u01c5\7A\2\2\u01c5I\3\2\2\2\u01c6\u01c7"+
+		"\7\27\2\2\u01c7\u01cc\5@!\2\u01c8\u01c9\7C\2\2\u01c9\u01cb\5@!\2\u01ca"+
+		"\u01c8\3\2\2\2\u01cb\u01ce\3\2\2\2\u01cc\u01ca\3\2\2\2\u01cc\u01cd\3\2"+
+		"\2\2\u01cdK\3\2\2\2\u01ce\u01cc\3\2\2\2\u01cf\u01d1\5T+\2\u01d0\u01cf"+
+		"\3\2\2\2\u01d1\u01d4\3\2\2\2\u01d2\u01d0\3\2\2\2\u01d2\u01d3\3\2\2\2\u01d3"+
+		"\u01d5\3\2\2\2\u01d4\u01d2\3\2\2\2\u01d5\u01d6\7\37\2\2\u01d6\u01d7\5"+
+		"^\60\2\u01d7\u01da\5Z.\2\u01d8\u01db\5<\37\2\u01d9\u01db\7\r\2\2\u01da"+
+		"\u01d8\3\2\2\2\u01da\u01d9\3\2\2\2\u01db\u01ec\3\2\2\2\u01dc\u01dd\5P"+
+		")\2\u01dd\u01de\7\r\2\2\u01de\u01ec\3\2\2\2\u01df\u01e1\7\30\2\2\u01e0"+
+		"\u01df\3\2\2\2\u01e0\u01e1\3\2\2\2\u01e1\u01e5\3\2\2\2\u01e2\u01e4\5T"+
+		"+\2\u01e3\u01e2\3\2\2\2\u01e4\u01e7\3\2\2\2\u01e5\u01e3\3\2\2\2\u01e5"+
+		"\u01e6\3\2\2\2\u01e6\u01e8\3\2\2\2\u01e7\u01e5\3\2\2\2\u01e8\u01e9\5R"+
+		"*\2\u01e9\u01ea\7\r\2\2\u01ea\u01ec\3\2\2\2\u01eb\u01d2\3\2\2\2\u01eb"+
+		"\u01dc\3\2\2\2\u01eb\u01e0\3\2\2\2\u01ecM\3\2\2\2\u01ed\u01ee\7E\2\2\u01ee"+
+		"O\3\2\2\2\u01ef\u01f0\7\21\2\2\u01f0\u01f1\5\64\33\2\u01f1\u01f2\7\'\2"+
+		"\2\u01f2\u01f3\5\u009aN\2\u01f3Q\3\2\2\2\u01f4\u01f7\5V,\2\u01f5\u01f6"+
+		"\7\'\2\2\u01f6\u01f8\5\u009aN\2\u01f7\u01f5\3\2\2\2\u01f7\u01f8\3\2\2"+
+		"\2\u01f8S\3\2\2\2\u01f9\u01fa\t\2\2\2\u01faU\3\2\2\2\u01fb\u01fc\7\65"+
+		"\2\2\u01fc\u01fd\5\64\33\2\u01fdW\3\2\2\2\u01fe\u01ff\7\37\2\2\u01ff\u0200"+
+		"\5^\60\2\u0200\u0201\5Z.\2\u0201\u0202\5<\37\2\u0202Y\3\2\2\2\u0203\u020c"+
+		"\7<\2\2\u0204\u0209\5b\62\2\u0205\u0206\7C\2\2\u0206\u0208\5b\62\2\u0207"+
+		"\u0205\3\2\2\2\u0208\u020b\3\2\2\2\u0209\u0207\3\2\2\2\u0209\u020a\3\2"+
+		"\2\2\u020a\u020d\3\2\2\2\u020b\u0209\3\2\2\2\u020c\u0204\3\2\2\2\u020c"+
+		"\u020d\3\2\2\2\u020d\u020e\3\2\2\2\u020e\u020f\7=\2\2\u020f[\3\2\2\2\u0210"+
+		"\u0211\5^\60\2\u0211\u0212\5`\61\2\u0212]\3\2\2\2\u0213\u0214\7T\2\2\u0214"+
+		"_\3\2\2\2\u0215\u0217\7<\2\2\u0216\u0215\3\2\2\2\u0216\u0217\3\2\2\2\u0217"+
+		"\u0219\3\2\2\2\u0218\u021a\5f\64\2\u0219\u0218\3\2\2\2\u0219\u021a\3\2"+
+		"\2\2\u021a\u021c\3\2\2\2\u021b\u021d\7=\2\2\u021c\u021b\3\2\2\2\u021c"+
+		"\u021d\3\2\2\2\u021da\3\2\2\2\u021e\u0221\5d\63\2\u021f\u0220\7\'\2\2"+
+		"\u0220\u0222\5\u009aN\2\u0221\u021f\3\2\2\2\u0221\u0222\3\2\2\2\u0222"+
+		"c\3\2\2\2\u0223\u0224\7\65\2\2\u0224\u0229\7T\2\2\u0225\u0226\7*\2\2\u0226"+
+		"\u0227\7\65\2\2\u0227\u0229\7T\2\2\u0228\u0223\3\2\2\2\u0228\u0225\3\2"+
+		"\2\2\u0229e\3\2\2\2\u022a\u022f\5h\65\2\u022b\u022c\7C\2\2\u022c\u022e"+
+		"\5h\65\2\u022d\u022b\3\2\2\2\u022e\u0231\3\2\2\2\u022f\u022d\3\2\2\2\u022f"+
+		"\u0230\3\2\2\2\u0230g\3\2\2\2\u0231\u022f\3\2\2\2\u0232\u0233\5j\66\2"+
+		"\u0233i\3\2\2\2\u0234\u0239\5l\67\2\u0235\u0236\7\22\2\2\u0236\u0238\5"+
+		"l\67\2\u0237\u0235\3\2\2\2\u0238\u023b\3\2\2\2\u0239\u0237\3\2\2\2\u0239"+
+		"\u023a\3\2\2\2\u023ak\3\2\2\2\u023b\u0239\3\2\2\2\u023c\u0241\5n8\2\u023d"+
+		"\u023e\7\23\2\2\u023e\u0240\5n8\2\u023f\u023d\3\2\2\2\u0240\u0243\3\2"+
+		"\2\2\u0241\u023f\3\2\2\2\u0241\u0242\3\2\2\2\u0242m\3\2\2\2\u0243\u0241"+
+		"\3\2\2\2\u0244\u0249\5p9\2\u0245\u0246\7\17\2\2\u0246\u0248\5p9\2\u0247"+
+		"\u0245\3\2\2\2\u0248\u024b\3\2\2\2\u0249\u0247\3\2\2\2\u0249\u024a\3\2"+
+		"\2\2\u024ao\3\2\2\2\u024b\u0249\3\2\2\2\u024c\u024d\5r:\2\u024d\u024e"+
+		"\t\3\2\2\u024e\u024f\5p9\2\u024f\u0252\3\2\2\2\u0250\u0252\5t;\2\u0251"+
+		"\u024c\3\2\2\2\u0251\u0250\3\2\2\2\u0252q\3\2\2\2\u0253\u0254\7\20\2\2"+
+		"\u0254\u0255\7<\2\2\u0255\u025a\5\66\34\2\u0256\u0257\7C\2\2\u0257\u0259"+
+		"\5\66\34\2\u0258\u0256\3\2\2\2\u0259\u025c\3\2\2\2\u025a\u0258\3\2\2\2"+
+		"\u025a\u025b\3\2\2\2\u025b\u025d\3\2\2\2\u025c\u025a\3\2\2\2\u025d\u025e"+
+		"\7=\2\2\u025e\u0261\3\2\2\2\u025f\u0261\5\66\34\2\u0260\u0253\3\2\2\2"+
+		"\u0260\u025f\3\2\2\2\u0261s\3\2\2\2\u0262\u0263\5v<\2\u0263\u0264\7;\2"+
+		"\2\u0264\u0265\5h\65\2\u0265\u0266\7D\2\2\u0266\u0267\5h\65\2\u0267\u026a"+
+		"\3\2\2\2\u0268\u026a\5v<\2\u0269\u0262\3\2\2\2\u0269\u0268\3\2\2\2\u026a"+
+		"u\3\2\2\2\u026b\u0270\5x=\2\u026c\u026d\78\2\2\u026d\u026f\5x=\2\u026e"+
+		"\u026c\3\2\2\2\u026f\u0272\3\2\2\2\u0270\u026e\3\2\2\2\u0270\u0271\3\2"+
+		"\2\2\u0271w\3\2\2\2\u0272\u0270\3\2\2\2\u0273\u0278\5z>\2\u0274\u0275"+
+		"\79\2\2\u0275\u0277\5z>\2\u0276\u0274\3\2\2\2\u0277\u027a\3\2\2\2\u0278"+
+		"\u0276\3\2\2\2\u0278\u0279\3\2\2\2\u0279y\3\2\2\2\u027a\u0278\3\2\2\2"+
+		"\u027b\u0280\5|?\2\u027c\u027d\7+\2\2\u027d\u027f\5|?\2\u027e\u027c\3"+
+		"\2\2\2\u027f\u0282\3\2\2\2\u0280\u027e\3\2\2\2\u0280\u0281\3\2\2\2\u0281"+
+		"{\3\2\2\2\u0282\u0280\3\2\2\2\u0283\u0288\5~@\2\u0284\u0285\7*\2\2\u0285"+
+		"\u0287\5~@\2\u0286\u0284\3\2\2\2\u0287\u028a\3\2\2\2\u0288\u0286\3\2\2"+
+		"\2\u0288\u0289\3\2\2\2\u0289}\3\2\2\2\u028a\u0288\3\2\2\2\u028b\u028e"+
+		"\5\u0080A\2\u028c\u028d\7V\2\2\u028d\u028f\5\u0080A\2\u028e\u028c\3\2"+
+		"\2\2\u028e\u028f\3\2\2\2\u028f\177\3\2\2\2\u0290\u0293\5\u0082B\2\u0291"+
+		"\u0292\7W\2\2\u0292\u0294\5\u0082B\2\u0293\u0291\3\2\2\2\u0293\u0294\3"+
+		"\2\2\2\u0294\u0081\3\2\2\2\u0295\u029a\5\u0084C\2\u0296\u0297\7X\2\2\u0297"+
+		"\u0299\5\u0084C\2\u0298\u0296\3\2\2\2\u0299\u029c\3\2\2\2\u029a\u0298"+
+		"\3\2\2\2\u029a\u029b\3\2\2\2\u029b\u0083\3\2\2\2\u029c\u029a\3\2\2\2\u029d"+
+		"\u02a2\5\u0086D\2\u029e\u029f\t\4\2\2\u029f\u02a1\5\u0086D\2\u02a0\u029e"+
+		"\3\2\2\2\u02a1\u02a4\3\2\2\2\u02a2\u02a0\3\2\2\2\u02a2\u02a3\3\2\2\2\u02a3"+
+		"\u0085\3\2\2\2\u02a4\u02a2\3\2\2\2\u02a5\u02aa\5\u0088E\2\u02a6\u02a7"+
+		"\t\5\2\2\u02a7\u02a9\5\u0088E\2\u02a8\u02a6\3\2\2\2\u02a9\u02ac\3\2\2"+
+		"\2\u02aa\u02a8\3\2\2\2\u02aa\u02ab\3\2\2\2\u02ab\u0087\3\2\2\2\u02ac\u02aa"+
+		"\3\2\2\2\u02ad\u02ae\7,\2\2\u02ae\u02b1\5\u0088E\2\u02af\u02b1\5\u008a"+
+		"F\2\u02b0\u02ad\3\2\2\2\u02b0\u02af\3\2\2\2\u02b1\u0089\3\2\2\2\u02b2"+
+		"\u02b5\5\u008cG\2\u02b3\u02b4\7\16\2\2\u02b4\u02b6\5\u008cG\2\u02b5\u02b3"+
+		"\3\2\2\2\u02b5\u02b6\3\2\2\2\u02b6\u008b\3\2\2\2\u02b7\u02b8\t\6\2\2\u02b8"+
+		"\u02c3\5\u008eH\2\u02b9\u02ba\7<\2\2\u02ba\u02bb\7I\2\2\u02bb\u02bc\7"+
+		"=\2\2\u02bc\u02c3\5\u008eH\2\u02bd\u02be\7<\2\2\u02be\u02bf\5n8\2\u02bf"+
+		"\u02c0\7=\2\2\u02c0\u02c3\3\2\2\2\u02c1\u02c3\5\u008eH\2\u02c2\u02b7\3"+
+		"\2\2\2\u02c2\u02b9\3\2\2\2\u02c2\u02bd\3\2\2\2\u02c2\u02c1\3\2\2\2\u02c3"+
+		"\u008d\3\2\2\2\u02c4\u02c5\7Y\2\2\u02c5\u02cb\5\66\34\2\u02c6\u02c7\5"+
+		"\66\34\2\u02c7\u02c8\7Y\2\2\u02c8\u02cb\3\2\2\2\u02c9\u02cb\5\u0090I\2"+
+		"\u02ca\u02c4\3\2\2\2\u02ca\u02c6\3\2\2\2\u02ca\u02c9\3\2\2\2\u02cb\u008f"+
+		"\3\2\2\2\u02cc\u02cd\7(\2\2\u02cd\u02d2\5\66\34\2\u02ce\u02cf\7)\2\2\u02cf"+
+		"\u02d2\5\66\34\2\u02d0\u02d2\5\u0092J\2\u02d1\u02cc\3\2\2\2\u02d1\u02ce"+
+		"\3\2\2\2\u02d1\u02d0\3\2\2\2\u02d2\u0091\3\2\2\2\u02d3\u02d6\5\u009aN"+
+		"\2\u02d4\u02d6\5\u009cO\2\u02d5\u02d3\3\2\2\2\u02d5\u02d4\3\2\2\2\u02d6"+
+		"\u0093\3\2\2\2\u02d7\u02d8\7G\2\2\u02d8\u02e1\7<\2\2\u02d9\u02de\5\u0096"+
+		"L\2\u02da\u02db\7C\2\2\u02db\u02dd\5\u0096L\2\u02dc\u02da\3\2\2\2\u02dd"+
+		"\u02e0\3\2\2\2\u02de\u02dc\3\2\2\2\u02de\u02df\3\2\2\2\u02df\u02e2\3\2"+
+		"\2\2\u02e0\u02de\3\2\2\2\u02e1\u02d9\3\2\2\2\u02e1\u02e2\3\2\2\2\u02e2"+
+		"\u02e3\3\2\2\2\u02e3\u02e4\7=\2\2\u02e4\u0095\3\2\2\2\u02e5\u02e8\5\u0098"+
+		"M\2\u02e6\u02e8\5h\65\2\u02e7\u02e5\3\2\2\2\u02e7\u02e6\3\2\2\2\u02e8"+
+		"\u0097\3\2\2\2\u02e9\u02ea\5h\65\2\u02ea\u02eb\7\67\2\2\u02eb\u02ec\5"+
+		"h\65\2\u02ec\u0099\3\2\2\2\u02ed\u02f3\5\u00a0Q\2\u02ee\u02f3\5\u00a6"+
+		"T\2\u02ef\u02f3\5\u009eP\2\u02f0\u02f3\5\u0094K\2\u02f1\u02f3\5\\/\2\u02f2"+
+		"\u02ed\3\2\2\2\u02f2\u02ee\3\2\2\2\u02f2\u02ef\3\2\2\2\u02f2\u02f0\3\2"+
+		"\2\2\u02f2\u02f1\3\2\2\2\u02f3\u009b\3\2\2\2\u02f4\u02f5\7*\2\2\u02f5"+
+		"\u02f8\5\66\34\2\u02f6\u02f8\5\66\34\2\u02f7\u02f4\3\2\2\2\u02f7\u02f6"+
+		"\3\2\2\2\u02f8\u009d\3\2\2\2\u02f9\u02fa\7P\2\2\u02fa\u009f\3\2\2\2\u02fb"+
+		"\u02fe\5\u00a2R\2\u02fc\u02fe\5\u00a4S\2\u02fd\u02fb\3\2\2\2\u02fd\u02fc"+
+		"\3\2\2\2\u02fe\u00a1\3\2\2\2\u02ff\u0300\t\7\2\2\u0300\u00a3\3\2\2\2\u0301"+
+		"\u0306\7N\2\2\u0302\u0303\7\13\2\2\u0303\u0305\t\b\2\2\u0304\u0302\3\2"+
+		"\2\2\u0305\u0308\3\2\2\2\u0306\u0304\3\2\2\2\u0306\u0307\3\2\2\2\u0307"+
+		"\u00a5\3\2\2\2\u0308\u0306\3\2\2\2\u0309\u030a\t\t\2\2\u030a\u00a7\3\2"+
+		"\2\2P\u00aa\u00ac\u00b0\u00b5\u00bd\u00c1\u00d2\u00db\u00f3\u00f8\u0105"+
+		"\u0121\u0129\u012d\u0135\u0139\u013d\u0145\u0150\u0158\u0162\u0169\u0176"+
+		"\u017d\u0185\u018b\u0198\u019f\u01a5\u01ad\u01b2\u01b8\u01bb\u01c1\u01cc"+
+		"\u01d2\u01da\u01e0\u01e5\u01eb\u01f7\u0209\u020c\u0216\u0219\u021c\u0221"+
+		"\u0228\u022f\u0239\u0241\u0249\u0251\u025a\u0260\u0269\u0270\u0278\u0280"+
+		"\u0288\u028e\u0293\u029a\u02a2\u02aa\u02b0\u02b5\u02c2\u02ca\u02d1\u02d5"+
+		"\u02de\u02e1\u02e7\u02f2\u02f7\u02fd\u0306";
 	public static final ATN _ATN =
 		ATNSimulator.deserialize(_serializedATN.toCharArray());
 	static {

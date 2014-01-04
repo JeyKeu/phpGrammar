@@ -26,7 +26,6 @@ Html
 HtmlWS : [ \r\n]+ -> skip
     ;
 
-
 //
 //
 // PHP 
@@ -38,12 +37,17 @@ PHPEnd
     : '?>' -> popMode
     ;
 
-//MultilineCommentStart
-//    : '/*' -> pushMode(MultilineCommentMode)
-//    ;
-
 MultiLineComment
-     : '/*' .*? '*/' -> channel(HIDDEN) ;
+     : '/*' .*? '*/' -> channel(HIDDEN) 
+     ;
+
+SinglelineComment
+    : '//' ~[\r\n]* -> channel(HIDDEN)
+    ;
+
+UnixComment
+    : '#' ~[\r\n]* -> channel(HIDDEN)
+    ;
 
 RealE
     : 'e' | 'E';
@@ -165,18 +169,6 @@ Abstract
     : 'abstract';
 Static
     : 'static';
-
-//MultilineComment    
-//    : '/*' ('*' | ~ '*')* '*/' 
-//    ;
-
-SinglelineComment
-    : '//' ~[\r\n]*
-    ;
-
-UnixComment
-    : '#' ~[\r\n]* 
-    ;
     
 Array
     : ('a'|'A')('r'|'R')('r'|'R')('a'|'A')('y'|'Y')
@@ -260,15 +252,7 @@ IncrementOperator
     
 WS : [ \t\r\n]+ -> skip;
 
-//mode MultilineCommentMode;
 
-//MultiLineComment
-//     : '/*' .*? '*/' 
-//     ;
-
-//MultilineCommentEnd
-//    : '*/'  -> popMode
-//    ;
 
 
 
