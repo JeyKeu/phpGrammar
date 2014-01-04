@@ -1,4 +1,4 @@
-// Generated from com/khubla/phpGrammar/PHP.g4 by ANTLR 4.1
+// Generated from com/khubla/phpGrammar/PHPParser.g4 by ANTLR 4.1
 package com.khubla.phpGrammar;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -7,11 +7,11 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link PHPListener},
+ * This class provides an empty implementation of {@link PHPParserListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-public class PHPBaseListener implements PHPListener {
+public class PHPParserBaseListener implements PHPParserListener {
 	/**
 	 * {@inheritDoc}
 	 * <p/>
@@ -420,6 +420,19 @@ public class PHPBaseListener implements PHPListener {
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
+	@Override public void enterProlog(@NotNull PHPParser.PrologContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitProlog(@NotNull PHPParser.PrologContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
 	@Override public void enterComparisionCheck(@NotNull PHPParser.ComparisionCheckContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -440,6 +453,19 @@ public class PHPBaseListener implements PHPListener {
 	 * The default implementation does nothing.
 	 */
 	@Override public void exitFunctionDefinition(@NotNull PHPParser.FunctionDefinitionContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterEpilog(@NotNull PHPParser.EpilogContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitEpilog(@NotNull PHPParser.EpilogContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -472,6 +498,19 @@ public class PHPBaseListener implements PHPListener {
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
+	@Override public void enterParamDef(@NotNull PHPParser.ParamDefContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitParamDef(@NotNull PHPParser.ParamDefContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
 	@Override public void enterBreakStatement(@NotNull PHPParser.BreakStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -492,19 +531,6 @@ public class PHPBaseListener implements PHPListener {
 	 * The default implementation does nothing.
 	 */
 	@Override public void exitClassMember(@NotNull PHPParser.ClassMemberContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void enterParamDef(@NotNull PHPParser.ParamDefContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void exitParamDef(@NotNull PHPParser.ParamDefContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -596,6 +622,19 @@ public class PHPBaseListener implements PHPListener {
 	 * The default implementation does nothing.
 	 */
 	@Override public void exitFieldModifier(@NotNull PHPParser.FieldModifierContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterHtmlblock(@NotNull PHPParser.HtmlblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitHtmlblock(@NotNull PHPParser.HtmlblockContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -849,19 +888,6 @@ public class PHPBaseListener implements PHPListener {
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterSwitchstatement(@NotNull PHPParser.SwitchstatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void exitSwitchstatement(@NotNull PHPParser.SwitchstatementContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
 	@Override public void enterStaticVariableAssignmentStatement(@NotNull PHPParser.StaticVariableAssignmentStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -869,6 +895,19 @@ public class PHPBaseListener implements PHPListener {
 	 * The default implementation does nothing.
 	 */
 	@Override public void exitStaticVariableAssignmentStatement(@NotNull PHPParser.StaticVariableAssignmentStatementContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterSwitchstatement(@NotNull PHPParser.SwitchstatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitSwitchstatement(@NotNull PHPParser.SwitchstatementContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -927,6 +966,19 @@ public class PHPBaseListener implements PHPListener {
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
+	@Override public void enterPhpBlock(@NotNull PHPParser.PhpBlockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitPhpBlock(@NotNull PHPParser.PhpBlockContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
 	@Override public void enterAssignment(@NotNull PHPParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -973,6 +1025,19 @@ public class PHPBaseListener implements PHPListener {
 	 * The default implementation does nothing.
 	 */
 	@Override public void exitInterfaceMember(@NotNull PHPParser.InterfaceMemberContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterHtml(@NotNull PHPParser.HtmlContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitHtml(@NotNull PHPParser.HtmlContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

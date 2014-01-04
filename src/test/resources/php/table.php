@@ -1,4 +1,4 @@
-
+<?php
 $db_host = 'localhost';
 $db_user = 'root';
 $db_pwd = 'lptm42b';
@@ -42,3 +42,4 @@ while($row = mysql_fetch_row($result))
     echo "</tr>\n";
 }
 mysql_free_result($result);
+?>

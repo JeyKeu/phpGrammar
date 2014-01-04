@@ -1,25 +1,46 @@
-    
 /*
- *   PHP ANTLR4 Grammar Copyright 2013, khubla.com
- *
- *   This program is free software: you can redistribute it and/or modify
- *   it under the terms of the GNU General Public License as published by
- *   the Free Software Foundation, either version 3 of the License, or
- *   (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU General Public License for more details.
- *
- *    You should have received a copy of the GNU General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+parser grammar PHPParser;
 
-grammar PHP;
+options { tokenVocab=PHPLexer; }
 
-prog : statement*;
+prog 
+    : (phpBlock | htmlblock)*
+    ;
 
+//
+//
+// HTML
+//
+//
+htmlblock
+    : PHPO? html+ 
+    ;
+
+html
+    : Html 
+    ;
+
+//
+//
+// PHP start and End
+//
+//
+phpBlock 
+    : prolog statement* epilog
+    ;
+
+prolog
+    : PHPStart
+    ;
+
+epilog
+    : PHPEnd
+    ;
+      
 //
 //
 // statement
@@ -450,223 +471,3 @@ string
     : SingleQuotedString
     | DoubleQuotedString
     ;
-      
-//
-//
-// Lexer tokens
-//
-//
-RealE
-    : 'e' | 'E';
-As
-    : 'as';
-SemiColon
-    : ';';
-Instanceof
-    : 'instanceof';
-And
-    : 'and';
-List
-    : 'list';
-Const
-    : 'const';
-Or
-    : 'or';
-Xor
-    : 'xor';
-Global
-    : 'global';
-Continue
-    : 'continue';
-Return
-    : 'return';
-Implements
-    : 'implements';
-Var
-    : 'var';
-Class
-    : 'class';
-Extends
-    : 'extends';
-Do
-    : 'do';
-Switch
-    : 'switch';
-Case
-    : 'case';
-Default
-    : 'default';
-Function
-    : 'function';
-Break
-    : 'break';
-If
-    : 'if';
-Else
-    : 'else';
-ElseIf
-    : 'elseif';
-For
-    : 'for';
-Foreach
-    : 'foreach';
-While
-    : 'while';
-Equals
-    : '=';
-New
-    : 'new';
-Clone
-    : 'clone';
-Ampersand
-    : '&';
-Pipe
-    : '|';
-Bang
-    : '!';
-Plus
-    : '+';
-Minus
-    : '-';
-Asterisk
-    : '*';
-Percent
-    : '%';
-Forwardslash
-    : '/';
-Tilde
-    : '~';
-InstanceMember
-    : '->';
-SuppressWarnings
-    : '@';
-Dollar
-    : '$';
-Dot
-    : '.';
-ArrayAssign
-    : '=>';
-LogicalOr
-    : '||';
-LogicalAnd
-    : '&&';
-ClassMember
-    : '::';
-QuestionMark
-    : '?';    
-OpenRoundBracket
-    : '(';
-CloseRoundBracket
-    : ')';
-OpenSquareBracket
-    : '[';
-CloseSquareBracket
-    : ']';
-OpenCurlyBracket
-    : '{';
-CloseCurlyBracket
-    : '}';
-Interface
-    : 'Interface';
-Comma
-    : ',';
-Colon
-    : ':';
-Abstract
-    : 'abstract';
-Static
-    : 'static';
-
-MultilineComment    
-    : '/*' ('*' | ~ '*')* '*/' 
-    ;
-
-SinglelineComment
-    : '//' ~[\r\n]*
-    ;
-
-UnixComment
-    : '#' ~[\r\n]* 
-    ;
-    
-Array
-    : ('a'|'A')('r'|'R')('r'|'R')('a'|'A')('y'|'Y')
-    ;
-
-RequireOperator
-    : 'require' | 'require_once' | 'include' | 'include_once'
-    ;
-
-PrimitiveType
-    : 'int'|'float'|'string'|'array'|'object'|'bool'
-    ;
-
-AccessModifier
-    : 'public' | 'private' | 'protected' 
-    ;
-
-DecimalNumber 
-    : ('0'..'9')+ 
-    ;
-
-HexNumber
-    : '0'('x'|'X')('0'..'9'|'a'..'f'|'A'..'F')+
-    ;
-
-OctalNumber
-    : '0'('0'..'7')+
-    ;
-
-Float: ('0'..'9')* '.' ('0'..'9')+;
-	
-Digits
-    : '0'..'9'+
-    ;
-
-Boolean
-    : 'true' | 'false'
-    ;
-
-SingleQuotedString
-    : '\'' ('\\' '\''
-    |         '\\' '\\' 
-    |         '\\' | ~ ('\'' | '\\'))* 
-      '\''
-    ;
-
-EscapeCharacter
-    : 'n' | 'r' | 't' | '\\' | '$' | '"' | Digits
-    ;
-
-DoubleQuotedString
-    : '"'  (  '\\' EscapeCharacter 
-    | '\\' 
-    | ~('\\'|'"') )* 
-      '"'
-    ;
-
-Identifier
-    : ('a'..'z' | 'A'..'Z' | '_')  ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*
-   ;
-   
-AssignmentOperator
-    : '+='|'-='|'*='|'/='|'.='|'%='|'&='|'|='|'^='|'<<='|'>>='
-    ;
-    
-EqualityOperator
-    : '==' | '!=' | '===' | '!=='
-    ;
-
-ComparisionOperator
-    : '<' | '<=' | '>' | '>=' | '<>'
-    ;
-    
-ShiftOperator
-    : '<<' | '>>'
-    ;
-
-IncrementOperator
-    : '--'|'++'
-    ;
-    
-WS : [ \t\r\n]+ -> skip;

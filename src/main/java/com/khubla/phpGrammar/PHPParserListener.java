@@ -1,4 +1,4 @@
-// Generated from com/khubla/phpGrammar/PHP.g4 by ANTLR 4.1
+// Generated from com/khubla/phpGrammar/PHPParser.g4 by ANTLR 4.1
 package com.khubla.phpGrammar;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
@@ -7,7 +7,7 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  * This interface defines a complete listener for a parse tree produced by
  * {@link PHPParser}.
  */
-public interface PHPListener extends ParseTreeListener {
+public interface PHPParserListener extends ParseTreeListener {
 	/**
 	 * Enter a parse tree produced by {@link PHPParser#expression}.
 	 * @param ctx the parse tree
@@ -350,6 +350,17 @@ public interface PHPListener extends ParseTreeListener {
 	void exitStatement(@NotNull PHPParser.StatementContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link PHPParser#prolog}.
+	 * @param ctx the parse tree
+	 */
+	void enterProlog(@NotNull PHPParser.PrologContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PHPParser#prolog}.
+	 * @param ctx the parse tree
+	 */
+	void exitProlog(@NotNull PHPParser.PrologContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link PHPParser#comparisionCheck}.
 	 * @param ctx the parse tree
 	 */
@@ -370,6 +381,17 @@ public interface PHPListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFunctionDefinition(@NotNull PHPParser.FunctionDefinitionContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link PHPParser#epilog}.
+	 * @param ctx the parse tree
+	 */
+	void enterEpilog(@NotNull PHPParser.EpilogContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PHPParser#epilog}.
+	 * @param ctx the parse tree
+	 */
+	void exitEpilog(@NotNull PHPParser.EpilogContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link PHPParser#defaultcase}.
@@ -394,6 +416,17 @@ public interface PHPListener extends ParseTreeListener {
 	void exitGlobalStatement(@NotNull PHPParser.GlobalStatementContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link PHPParser#paramDef}.
+	 * @param ctx the parse tree
+	 */
+	void enterParamDef(@NotNull PHPParser.ParamDefContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PHPParser#paramDef}.
+	 * @param ctx the parse tree
+	 */
+	void exitParamDef(@NotNull PHPParser.ParamDefContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link PHPParser#breakStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -414,17 +447,6 @@ public interface PHPListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitClassMember(@NotNull PHPParser.ClassMemberContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link PHPParser#paramDef}.
-	 * @param ctx the parse tree
-	 */
-	void enterParamDef(@NotNull PHPParser.ParamDefContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PHPParser#paramDef}.
-	 * @param ctx the parse tree
-	 */
-	void exitParamDef(@NotNull PHPParser.ParamDefContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link PHPParser#functionName}.
@@ -502,6 +524,17 @@ public interface PHPListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFieldModifier(@NotNull PHPParser.FieldModifierContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link PHPParser#htmlblock}.
+	 * @param ctx the parse tree
+	 */
+	void enterHtmlblock(@NotNull PHPParser.HtmlblockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PHPParser#htmlblock}.
+	 * @param ctx the parse tree
+	 */
+	void exitHtmlblock(@NotNull PHPParser.HtmlblockContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link PHPParser#arrayEntry}.
@@ -713,17 +746,6 @@ public interface PHPListener extends ParseTreeListener {
 	void exitKeyValuePair(@NotNull PHPParser.KeyValuePairContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link PHPParser#switchstatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterSwitchstatement(@NotNull PHPParser.SwitchstatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PHPParser#switchstatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitSwitchstatement(@NotNull PHPParser.SwitchstatementContext ctx);
-
-	/**
 	 * Enter a parse tree produced by {@link PHPParser#staticVariableAssignmentStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -733,6 +755,17 @@ public interface PHPListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStaticVariableAssignmentStatement(@NotNull PHPParser.StaticVariableAssignmentStatementContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link PHPParser#switchstatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterSwitchstatement(@NotNull PHPParser.SwitchstatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PHPParser#switchstatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitSwitchstatement(@NotNull PHPParser.SwitchstatementContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link PHPParser#addition}.
@@ -779,6 +812,17 @@ public interface PHPListener extends ParseTreeListener {
 	void exitDostatement(@NotNull PHPParser.DostatementContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link PHPParser#phpBlock}.
+	 * @param ctx the parse tree
+	 */
+	void enterPhpBlock(@NotNull PHPParser.PhpBlockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PHPParser#phpBlock}.
+	 * @param ctx the parse tree
+	 */
+	void exitPhpBlock(@NotNull PHPParser.PhpBlockContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link PHPParser#assignment}.
 	 * @param ctx the parse tree
 	 */
@@ -821,6 +865,17 @@ public interface PHPListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitInterfaceMember(@NotNull PHPParser.InterfaceMemberContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link PHPParser#html}.
+	 * @param ctx the parse tree
+	 */
+	void enterHtml(@NotNull PHPParser.HtmlContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PHPParser#html}.
+	 * @param ctx the parse tree
+	 */
+	void exitHtml(@NotNull PHPParser.HtmlContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link PHPParser#bool}.

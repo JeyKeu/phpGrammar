@@ -1,4 +1,4 @@
-
+<?
 // base class with member properties and methods
 class Vegetable {
 
@@ -25,4 +25,5 @@ class Vegetable {
 
 
 } // end of class Vegetable
+?>
 

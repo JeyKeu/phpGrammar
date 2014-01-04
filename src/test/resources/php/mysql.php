@@ -1,3 +1,4 @@
+<?
 // Connecting, selecting database
 $link = mysql_connect('mysql_host', 'mysql_user', 'mysql_password')
     or die('Could not connect: ' . mysql_error());
@@ -24,3 +25,4 @@ mysql_free_result($result);
 
 // Closing connection
 mysql_close($link);
+?>
