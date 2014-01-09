@@ -72,7 +72,7 @@ forstatement
     ;
 
 ifstatement
-    : If '(' expression ')' statement (ElseIf '(' expression ')')* (Else statement)?
+    : If '(' expression ')' statement (ElseIf '(' expression ')' statement)* (Else statement)?
     ;
 
 foreachstatement
@@ -151,7 +151,6 @@ variable
 variablename
     : Identifier
     ;
-
 
 //
 //
